@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="Your description goes here">
-    	<meta name="keywords" content="one, two, three">
 
-		<title>Clear Coin</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Your description goes here">
+	<meta name="keywords" content="one, two, three">
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>	
+	<title>Clear Coin</title>
 
-		<table class="table is-narrow is-hoverable" id="leaderboard">
-			<thead>
-				<tr>
-					<!-- <th class="rank"><abbr title="Position">Rank</abbr></th> -->
-					<th class="name">Name</th>
-					<!-- <th class="symbol">Symbol</th> -->
-					<th class="price">Price (CAD)</th>
-					<th class="marketCap">Market Cap</th>
-					<th class="circSupply">Circulating Supply</th>
-					<th class="volume">Volume (24h)</th>
-					<!-- <th class="percentageChange1Hour">1h %</th> -->
-					<th class="percentageChange24Hour">24h %</th>
-				</tr>
-			</thead>
-			<tbody id="cryptocurrencies">
-				<!-- <tr>
-					<td id="btcRank"></td>
-					<td id="btcName"></td>
-					<td id="btcSymbol"></td>
-					<td id="btcPrice"></td>
-					<td id="btcMarketCap"></td>
-					<td id="btcCircSupply"></td>
-					<td id="btcVolume"></td>
-					<td id="btcPercentageChange1Hour"></td>
-					<td id="btcPercentageChange24Hour"></td>
-				</tr> -->
-			</tbody>
-		</table>
+	<!-- external CSS link -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<header>
 
 
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
+		<a href="#">
+			<h1>ClearCoin</h1>
+		</a>
+			<a href="#" class="signInBtn">Sign In</a>
+	
+	</header>
+<section class="tableContainer">
+	<table class="table is-narrow is-hoverable" id="leaderboard">
+		<thead>
+			<tr class="tableHeading">
+
+				<th class="name">Currency</th>
+				<th class="price">Price(CAD)</th>
+				<th class="marketCap">Market Cap(CAD)</th>
+				<th class="circSupply">Circulating Supply</th>
+				<th class="volume">24h Volume(CAD)</th>
+				<th class="percentageChange24Hour">24h %</th>
+			</tr>
+		</thead>
+		<tbody id="cryptocurrencies">
+
+		</tbody>
+	</table>
+</section>
+
+
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>

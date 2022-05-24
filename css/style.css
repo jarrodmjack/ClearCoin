@@ -3,6 +3,9 @@
      box-sizing: border-box;
 }
 
+html{
+     font-size: 62.5%;
+}
 /* Clear fix hack */
 .clearfix:after {
      content: ".";
@@ -21,7 +24,103 @@
 /* BASE STYLES
 /*******************************************/
 
+body{
+     font-family: 'Roboto', sans-serif;
+}
+
+a{
+ color: white;
+ text-decoration: none;
+ font-size: 2rem;    
+}
+
+h1{
+     padding: 0;
+     margin: 0;
+     font-size: 3rem;
+     letter-spacing: 0.2rem;
+     text-align: center;
+    margin-left: 5rem;
+}
+
+h1:hover{
+     color: lightgray;
+}
+
+tr{
+     border-bottom:  1px solid rgb(181, 178, 178);
+     border-top: 1px solid rgb(181, 178, 178);
+     height: 50px;
+}
+
+
+
+table{
+     margin: 0 auto;
+     width: 1200px;
+}
+
+table, th, td, tr {
+     vertical-align: middle;
+}
+
+
+
+table, th, td{
+     font-size: 2rem;
+}
+
+
+
+.signInBtn{
+     margin-right: 5rem;
+     border: 3px solid white;
+     padding: 1.25rem 2rem 1.25rem 2rem;
+     display: block;
+     border-radius: 12px;
+}
+.signInBtn:hover{
+     color: rgb(10, 102, 251);
+     background-color: white;
+     border-color: rgb(10, 102, 251);
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+
+ /* header */
+
+.logoContainer{
+     display: flex;
+     flex-direction: column;
+}
+
+header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 100px;     
+     color: white;
+     background-color: rgb(10, 102, 251);
+}
+
+
+/* table */
+
+
+
+.tableHeading{
+     text-align: left;
+     height: 75px;
+
+}
+
+.tableContainer{
+     padding-top: 15rem;
+     height: 1000px;
+}
+
+h2{
+     color: rgb(24, 180, 24);
+}

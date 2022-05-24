@@ -76,60 +76,72 @@
 
 
 
-// Market data rather than individual coin data
+// Market data rather than individual coin data to display in table
 
 
-
+// global vars to store a couple elements I needed
 let tbody = document.querySelector('#cryptocurrencies')
 let newRow = document.querySelector('tr')
 
-
+// fetching data from coingeck API
 fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-.then(res => res.json()) 
-.then(data => { 
-  console.log(data)
-  console.log(data[0].image)
-  console.log(data[0].name)
-  console.log(data[0].current_price)
-  console.log(data[0].market_cap)
-  console.log(data[0].circulating_supply)
-  console.log(data[0].total_volume)
-  console.log(data[0].price_change_percentage_24h)
-  // console.log(data[0].symbol) //<--- may add symbol after?
-  
-  console.log(data)
+  .then(res => res.json())
+  .then(data => {
+    // logging to test which data I am receiving
+    console.log(data)
+    console.log(data[0].image)
+    console.log(data[0].name)
+    console.log(data[0].current_price)
+    console.log(data[0].market_cap)
+    console.log(data[0].circulating_supply)
+    console.log(data[0].total_volume)
+    console.log(data[0].price_change_percentage_24h)
 
 
+    /* Creating the elements for the table. Not pretty, will work on
+    refactoring this part */
+    for (let i = 0; i < 10; i++) {
 
-for(let i = 0; i < 10; i++){
-    const tr = document.createElement('tr')
- 
-    tbody.appendChild(tr)
+      // table row creation and append to table body
+      const tr = document.createElement('tr')
+      tbody.appendChild(tr)
 
-    // for(let j = 1; j < 6; j++){
-    //   const td = document.createElement('td')
-    //   tr.appendChild(td)
-    //   td.innerText = data[i].name
-    // }
-     const td = document.createElement('td')
-      tr.appendChild(td)
-      td.innerText = data[i].name
-    // console.log(data[i].name)
-  }
+      // Hard coded table data for now, will work on refactoring
+      const td1 = document.createElement('td')
+      tr.appendChild(td1)
+      td1.innerText = data[i].name
+      const td2 = document.createElement('td')
+      tr.appendChild(td2)
+      if (data[i].current_price % 1 === 0) {
+        td2.innerText = `$${data[i].current_price}`
+      } else {
+        td2.innerText = `$${data[i].current_price.toFixed(2)}`
+      }
+      const td3 = document.createElement('td')
+      tr.appendChild(td3)
+      td3.innerText = `$${data[i].market_cap}`
+      const td4 = document.createElement('td')
+      tr.appendChild(td4)
+      td4.innerText = data[i].circulating_supply.toFixed(0)
+      const td5 = document.createElement('td')
+      tr.appendChild(td5)
+      td5.innerText = `${data[i].total_volume}`
+      const td6 = document.createElement('td')
+      tr.appendChild(td6)
+      if(data[i].price_change_percentage_24h > 0){
+      td6.innerText = `${data[i].price_change_percentage_24h.toFixed(2)}%`
+      td6.style.color = 'rgb(24, 180, 24)'
+      }else{
+        td6.innerText = `${data[i].price_change_percentage_24h.toFixed(2)}%`
+      td6.style.color = 'red'
+      }
+      
+    }
 
-  
 
-
-  // data.forEach(item => {
-  //   const tr = document.createElement('tr')
-  //   tbody.appendChild(tr)
-  // });
-
-  
-
-})
-.catch(err => {
+  })
+  .catch(err => {
     console.log(`error ${err}`)
-});
+  });
 
 
