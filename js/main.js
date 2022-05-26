@@ -89,13 +89,13 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
   .then(data => {
     // logging to test which data I am receiving
     console.log(data)
-    console.log(data[0].image)
-    console.log(data[0].name)
-    console.log(data[0].current_price)
-    console.log(data[0].market_cap)
-    console.log(data[0].circulating_supply)
-    console.log(data[0].total_volume)
-    console.log(data[0].price_change_percentage_24h)
+    // console.log(data[0].image)
+    // console.log(data[0].name)
+    // console.log(data[0].current_price)
+    // console.log(data[0].market_cap)
+    // console.log(data[0].circulating_supply)
+    // console.log(data[0].total_volume)
+    // console.log(data[0].price_change_percentage_24h)
 
 
     /* Creating the elements for the table. Not pretty, will work on
@@ -145,3 +145,36 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
   });
 
 
+
+  // fetching data from coingeck API 
+fetch("https://api.coingecko.com/api/v3/search/trending")
+.then(res => res.json())
+.then(data => {
+  console.log(data)
+  console.log(data.coins[0].item.thumb)
+  console.log(data.coins[0].item.name)
+  console.log(data.coins[0].item.symbol)
+
+
+// trending 1
+  document.querySelector('#trendingNameOne').innerText = data.coins[0].item.name
+  document.querySelector('#trendingSymbolOne').innerText = data.coins[0].item.symbol
+  document.querySelector('#trendingIconOne').src = data.coins[0].item.thumb
+
+// trending 2
+  document.querySelector('#trendingNameTwo').innerText = data.coins[1].item.name
+  document.querySelector('#trendingSymbolTwo').innerText = data.coins[1].item.symbol
+  document.querySelector('#trendingIconTwo').src = data.coins[1].item.thumb
+
+// trending 3
+  document.querySelector('#trendingNameThree').innerText = data.coins[2].item.name
+  document.querySelector('#trendingSymbolThree').innerText = data.coins[2].item.symbol
+  document.querySelector('#trendingIconThree').src = data.coins[2].item.thumb
+
+
+
+
+})
+.catch(err => {
+  console.log(`error ${err}`)
+});

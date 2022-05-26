@@ -26,6 +26,10 @@ html{
 
 body{
      font-family: 'Roboto', sans-serif;
+     /* background-color: rgba(18,18,18,255); */
+
+     background: rgb(34,36,48);
+background: linear-gradient(180deg, rgba(34,36,48,1) 0%, rgba(23,23,26,1) 100%);
 }
 
 a{
@@ -47,11 +51,59 @@ h1:hover{
      color: lightgray;
 }
 
+h2 {
+     color: lightgray;
+}
+
+span{
+     color: white;
+}
+
+/* Triple section (trending, top movers, tbd) */
+
+
+
+.tripleWrapper{
+     padding-top: 10rem;
+     display: flex;
+     justify-content: center;
+     gap: 5rem;
+}
+
+.trendingTitle{
+     font-size: 2rem;
+     text-align: center;
+     
+}
+
+.tripleContainers{
+     height: 175px;
+     width: 400px;
+     padding: 2rem;
+     border: 1px solid yellow;
+     border-radius: 10px;
+     gap: 1rem;
+     display: flex;
+     flex-direction: column;
+}
+
+.trendingContainer{
+     display: flex;
+     gap: 30px;
+     font-size: 2rem;
+     /* justify-content: space-around; */
+     /* border: 1px solid red; */
+}
+
+
+/* Table  */
 tr{
      border-bottom:  1px solid rgb(181, 178, 178);
      border-top: 1px solid rgb(181, 178, 178);
      height: 50px;
 }
+
+
 
 
 
@@ -62,12 +114,15 @@ table{
 
 table, th, td, tr {
      vertical-align: middle;
+     color: rgba(122,133,130,255);
+     width: 1300px;
+
 }
 
 
 
 table, th, td{
-     font-size: 2rem;
+     font-size: 1.7rem;
 }
 
 
@@ -80,16 +135,15 @@ table, th, td{
      border-radius: 12px;
 }
 .signInBtn:hover{
-     color: rgb(10, 102, 251);
+     color: black;
      background-color: white;
-     border-color: rgb(10, 102, 251);
+     /* border-color: rgb(10, 102, 251); */
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
 
  /* header */
+
+
 
 .logoContainer{
      display: flex;
@@ -102,7 +156,15 @@ header {
      align-items: center;
      height: 100px;     
      color: white;
-     background-color: rgb(10, 102, 251);
+     background-color: rgb(23, 24, 25);
+}
+
+.headerItemContainer{
+     margin: 0 auto;
+     width: 1400px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
 }
 
 
@@ -117,10 +179,6 @@ header {
 }
 
 .tableContainer{
-     padding-top: 15rem;
+     padding-top: 10rem;
      height: 1000px;
-}
-
-h2{
-     color: rgb(24, 180, 24);
 }
