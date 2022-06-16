@@ -70,29 +70,40 @@ span{
      gap: 5rem;
 }
 
-.trendingTitle{
+h2.trendingTitle,
+h2.trustedTitle{
      font-size: 2rem;
      text-align: center;
+     color: rgb(9, 254, 99);
      
 }
 
 .tripleContainers{
-     height: 175px;
+     height: 250px;
      width: 400px;
      padding: 2rem;
-     border: 1px solid yellow;
+     border: 10px solid rgb(10, 19, 21);
+     outline: 1px solid rgb(95, 160, 160);
      border-radius: 10px;
      gap: 1rem;
      display: flex;
      flex-direction: column;
 }
 
-.trendingContainer{
+.trendingContainer,
+.trustedContainer{
      display: flex;
      gap: 30px;
      font-size: 2rem;
      /* justify-content: space-around; */
      /* border: 1px solid red; */
+}
+
+#trustedIconOne,
+#trustedIconTwo,
+#trustedIconThree{
+     height: 25px;
+     width: 25px;
 }
 
 
@@ -101,9 +112,13 @@ tr{
      border-bottom:  1px solid rgb(181, 178, 178);
      border-top: 1px solid rgb(181, 178, 178);
      height: 50px;
+    
 }
 
-
+th.price:hover{
+     cursor: pointer;
+     
+}
 
 
 
@@ -114,7 +129,7 @@ table{
 
 table, th, td, tr {
      vertical-align: middle;
-     color: rgba(122,133,130,255);
+     color: rgb(194, 192, 192);
      width: 1300px;
 
 }
@@ -127,18 +142,35 @@ table, th, td{
 
 
 
-.signInBtn{
-     margin-right: 5rem;
-     border: 3px solid white;
-     padding: 1.25rem 2rem 1.25rem 2rem;
-     display: block;
-     border-radius: 12px;
+
+.tableHeading{
+     text-align: left;
+     height: 75px;
+
 }
-.signInBtn:hover{
-     color: black;
-     background-color: white;
-     /* border-color: rgb(10, 102, 251); */
+
+tr:hover{
+     background-color: rgb(77, 80, 101);
+     color: white;
 }
+
+.tableHead {
+     font-weight: bold;
+     color: rgb(251, 251, 251);
+}
+
+.tableContainer{
+     padding-top: 10rem;
+     height: 1000px;
+}
+
+.tableSymbol{
+     height: 30px;
+     width: 30px;
+     align-items: center;
+     text-align: center;
+}
+
 
 
  /* header */
@@ -167,18 +199,23 @@ header {
      align-items: center;
 }
 
+.signInBtn{
+     margin-right: 5rem;
+     border: 3px solid white;
+     padding: 1.25rem 2rem 1.25rem 2rem;
+     display: block;
+     border-radius: 12px;
+}
+.signInBtn:hover{
+     color: black;
+     background-color: white;
+     /* border-color: rgb(10, 102, 251); */
+}
+
+
+
 
 /* table */
 
 
 
-.tableHeading{
-     text-align: left;
-     height: 75px;
-
-}
-
-.tableContainer{
-     padding-top: 10rem;
-     height: 1000px;
-}
