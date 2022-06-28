@@ -143,7 +143,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
     /* Creating the elements for the table. Not pretty, will work on
     refactoring this part */
 
-    for(let i = 1; i < 6; i ++){
+    for (let i = 1; i < 6; i++) {
       const td = document.createElement('td')
     }
 
@@ -255,42 +255,58 @@ fetch("https://api.coingecko.com/api/v3/search/trending")
 
 
 
+// TRUSTED EXCHANGES***********
+fetch("https://api.coingecko.com/api/v3/global")
+  .then(res => res.json())
+  .then(data => {
+    // console.log(data)
+    console.log(data.data.active_cryptocurrencies)
+
+    document.querySelector('#activeCurrencyCount').innerText = data.data.active_cryptocurrencies
+
+
+  })
+  .catch(err => {
+    console.log(`error ${err}`)
+  });
 
 
 
 
-  
-    // TRUSTED EXCHANGES***********
-    fetch("https://api.coingecko.com/api/v3/exchanges?per_page=5")
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-     
-  
-  
-      // trending 1
-      document.querySelector('#trustedNameOne').innerText = data[0].name
-      // document.querySelector('#trustedSymbolOne').innerText = data[0]
-      document.querySelector('#trustedIconOne').src = data[0].image
-  
-      // trending 2
-      document.querySelector('#trustedNameTwo').innerText = data[1].name
-      // document.querySelector('#trustedSymbolTwo').innerText = data[1]
-      document.querySelector('#trustedIconTwo').src = data[1].image
-  
-      // trending 3
-      document.querySelector('#trustedNameThree').innerText = data[2].name
-      // document.querySelector('#trustedSymbolThree').innerText = data[2]
-      document.querySelector('#trustedIconThree').src = data[2].image
-  
-  
-  
-    })
-    .catch(err => {
-      console.log(`error ${err}`)
-    });
 
-    
+
+
+
+
+// TRUSTED EXCHANGES***********
+fetch("https://api.coingecko.com/api/v3/exchanges?per_page=5")
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+
+
+
+    // trending 1
+    document.querySelector('#trustedNameOne').innerText = data[0].name
+    // document.querySelector('#trustedSymbolOne').innerText = data[0]
+    document.querySelector('#trustedIconOne').src = data[0].image
+
+    // trending 2
+    document.querySelector('#trustedNameTwo').innerText = data[1].name
+    // document.querySelector('#trustedSymbolTwo').innerText = data[1]
+    document.querySelector('#trustedIconTwo').src = data[1].image
+
+    // trending 3
+    document.querySelector('#trustedNameThree').innerText = data[2].name
+    // document.querySelector('#trustedSymbolThree').innerText = data[2]
+    document.querySelector('#trustedIconThree').src = data[2].image
+
+  })
+  .catch(err => {
+    console.log(`error ${err}`)
+  });
+
+
 
 
 
