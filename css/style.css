@@ -68,6 +68,7 @@ span{
      display: flex;
      justify-content: center;
      gap: 5rem;
+     margin-bottom: 10rem;
 }
 
 h2.trendingTitle,
@@ -85,7 +86,7 @@ h2.trustedTitle{
      border: 10px solid rgb(10, 19, 21);
      outline: 1px solid rgb(95, 160, 160);
      border-radius: 10px;
-     gap: 1rem;
+     gap: 30px;
      display: flex;
      flex-direction: column;
 }
@@ -105,6 +106,50 @@ h2.trustedTitle{
      height: 25px;
      width: 25px;
 }
+
+
+
+/* Active currencies section */
+
+.activeCurrenciesContainer {
+     margin: 0 auto;
+     width: 500px;
+     height: 150px;
+     border: 10px solid rgb(10, 19, 21);
+     outline: 1px solid rgb(95, 160, 160);
+     border-radius: 10px;
+     padding: 1rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+}
+
+h3.activeCurrencies,
+span.activeCurrencies {
+     color: white;
+     font-size: 3rem;
+     color: rgb(9, 254, 99);
+}
+
+#activeCurrencyCount{
+     color: white;
+}
+
+/* 
+h3.activeCurrencies {
+     font-size: 3rem;
+     color: white;
+     text-align: center;
+} */
+
+/* span.activeCurrencies{
+     font-size: 3rem;
+     color: white;
+     text-align: center;
+} */
+
+
 
 
 /* Table  */
