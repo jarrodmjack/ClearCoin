@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Your description goes here">
+	<meta name="keywords" content="one, two, three">
+
+	<title>Clear Coin</title>
+
+	<!-- external CSS link -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/tablesort.css">
+</head>
+
+<body class="portfolioBody">
+
+	<header>
+		<div class="headerItemContainer">
+			<a href="#">
+				<h1>ClearCoin</h1>
+			</a>
+			<div class="nav-button-container">
+				<a href="/" class="signInBtn">Home</a>
+				<a href="#" class="signInBtn">Sign In</a>
+			</div>
+		</div>
+	</header>
+
+
+
+	<label for="ice-cream-choice">Currency</label>
+	<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+	<datalist id="ice-cream-flavors">
+		<% for(let i=0; i < coins.length; i++) {%>
+			<option class="listItems" value="<%= coins[i].name %>">
+		<% } %>
+	</datalist>
+
+		
+		
+
+	<div class="portfolioCoinContainer">
+		<input id="coinSearch" type="search">
+		<input id="testBtn" type="submit">
+		<div class="portfolioCoinList">
+		</div>
+	</div>
+
+
+ <!-- <div class="dropdown">
+	<button class="dropbtn">Dropdown</button>
+	<div id="myDropdown" class="dropdown-content">
+	  <input  type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+	  
+	</div>
+  </div>
+ -->
+
+  
+
+
+			<!-- <h2>Left to do</h2>   -->
+
+			<!-- <h2>Add A Todo:</h2> -->
+
+
+			<!-- <form action="/addTodo" method="POST"> 
+        <input type="text" placeholder="Quantity" name="todoItem">
+        <input type="submit">
+    </form> -->
+
+
+
+
+
+			<!-- <script src="/js/portfolio.js"></script> -->
+			<script type="module" src="/js/portfolio.js"></script>
+			<script src="js/tablesort.js"></script>
+</body>
+
+</html>

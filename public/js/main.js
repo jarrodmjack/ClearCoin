@@ -1,4 +1,4 @@
-
+console.log('main.js loaded ')
 // let tbody = document.querySelector('#cryptocurrencies')
 
 
@@ -89,6 +89,7 @@ let newRow = document.querySelector('tr')
 // Price sort array
 let priceArray = []
 let coinArray = []
+let dbCoinsArray = []
 
 
 class Currency {
@@ -139,6 +140,18 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
     // console.log(data[0].total_volume)
     // console.log(data[0].price_change_percentage_24h)
 
+    for(let i = 0; i < data.length; i++){
+      dbCoinsArray.push({
+        name: data[i].name,
+        currentprice: data[i].current_price,
+        id: data[i].symbol,
+        amount: 0
+      })
+    }
+
+
+
+
 
     /* Creating the elements for the table. Not pretty, will work on
     refactoring this part */
@@ -146,6 +159,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
     for (let i = 1; i < 6; i++) {
       const td = document.createElement('td')
     }
+
 
 
     for (let i = 0; i < 15; i++) {
@@ -217,9 +231,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
   .catch(err => {
     console.log(`error ${err}`)
   });
-
-
-
+  
 // TRENDING **********
 // fetching data from coingeck API 
 fetch("https://api.coingecko.com/api/v3/search/trending")
@@ -305,6 +317,91 @@ fetch("https://api.coingecko.com/api/v3/exchanges?per_page=5")
   .catch(err => {
     console.log(`error ${err}`)
   });
+
+
+
+// adding coins to database **********
+const oneDayPrice = 0;
+const twoDayPrice = 0;
+const fiveDayPrice = 0;
+document.querySelector('.addCoins').addEventListener('click', addCoinsToDb)
+
+async function addCoinsToDb(){  // function to mark item as complete
+    console.log('coins added')
+    const coins = dbCoinsArray
+  try{
+      const response = await fetch('addCoinsToDb', { // fetch request sent to markComplete route
+          method: 'post', //method type
+          headers: {'Content-Type': 'application/json'},  //headers
+          body: JSON.stringify({ //turn JS value into JSON object to be sent to the server
+              'coin': coins
+          })
+        })
+      const data = await response.json() // gets response from server as json
+      console.log(data)  // logs data to console
+      location.reload()  
+
+  }catch(err){ // catch error
+      console.log(err)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// LOCALSTORAGE
+// on click of an item in the list of coins on my portfolio
+// I want to set that particular item (name, price, symbol) as an object in localstorage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

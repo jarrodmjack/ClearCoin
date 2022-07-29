@@ -3,9 +3,10 @@
      box-sizing: border-box;
 }
 
-html{
+html {
      font-size: 62.5%;
 }
+
 /* Clear fix hack */
 .clearfix:after {
      content: ".";
@@ -17,37 +18,38 @@ html{
 }
 
 .clear {
-	clear: both;
+     clear: both;
 }
 
 /******************************************
 /* BASE STYLES
 /*******************************************/
 
-body{
+body {
      font-family: 'Roboto', sans-serif;
      /* background-color: rgba(18,18,18,255); */
 
-     background: rgb(34,36,48);
-background: linear-gradient(180deg, rgba(34,36,48,1) 0%, rgba(23,23,26,1) 100%);
+     background: rgb(34, 36, 48);
+     background: linear-gradient(180deg, rgba(34, 36, 48, 1) 0%, rgba(23, 23, 26, 1) 100%);
+
 }
 
-a{
- color: white;
- text-decoration: none;
- font-size: 2rem;    
+a {
+     color: white;
+     text-decoration: none;
+     font-size: 2rem;
 }
 
-h1{
+h1 {
      padding: 0;
      margin: 0;
      font-size: 3rem;
      letter-spacing: 0.2rem;
      text-align: center;
-    margin-left: 5rem;
+     margin-left: 5rem;
 }
 
-h1:hover{
+h1:hover {
      color: lightgray;
 }
 
@@ -55,7 +57,7 @@ h2 {
      color: lightgray;
 }
 
-span{
+span {
      color: white;
 }
 
@@ -63,7 +65,7 @@ span{
 
 
 
-.tripleWrapper{
+.tripleWrapper {
      padding-top: 10rem;
      display: flex;
      justify-content: center;
@@ -72,14 +74,14 @@ span{
 }
 
 h2.trendingTitle,
-h2.trustedTitle{
+h2.trustedTitle {
      font-size: 2rem;
      text-align: center;
      color: rgb(9, 254, 99);
-     
+
 }
 
-.tripleContainers{
+.tripleContainers {
      height: 250px;
      width: 400px;
      padding: 2rem;
@@ -92,7 +94,7 @@ h2.trustedTitle{
 }
 
 .trendingContainer,
-.trustedContainer{
+.trustedContainer {
      display: flex;
      gap: 30px;
      font-size: 2rem;
@@ -102,7 +104,7 @@ h2.trustedTitle{
 
 #trustedIconOne,
 #trustedIconTwo,
-#trustedIconThree{
+#trustedIconThree {
      height: 25px;
      width: 25px;
 }
@@ -132,7 +134,7 @@ span.activeCurrencies {
      color: rgb(9, 254, 99);
 }
 
-#activeCurrencyCount{
+#activeCurrencyCount {
      color: white;
 }
 
@@ -153,26 +155,29 @@ h3.activeCurrencies {
 
 
 /* Table  */
-tr{
-     border-bottom:  1px solid rgb(181, 178, 178);
+tr {
+     border-bottom: 1px solid rgb(181, 178, 178);
      border-top: 1px solid rgb(181, 178, 178);
      height: 50px;
-    
+
 }
 
-th.price:hover{
+th.price:hover {
      cursor: pointer;
-     
+
 }
 
 
 
-table{
+table {
      margin: 0 auto;
      width: 1200px;
 }
 
-table, th, td, tr {
+table,
+th,
+td,
+tr {
      vertical-align: middle;
      color: rgb(194, 192, 192);
      width: 1300px;
@@ -181,20 +186,22 @@ table, th, td, tr {
 
 
 
-table, th, td{
+table,
+th,
+td {
      font-size: 1.7rem;
 }
 
 
 
 
-.tableHeading{
+.tableHeading {
      text-align: left;
      height: 75px;
 
 }
 
-tr:hover{
+tr:hover {
      background-color: rgb(77, 80, 101);
      color: white;
 }
@@ -204,12 +211,12 @@ tr:hover{
      color: rgb(251, 251, 251);
 }
 
-.tableContainer{
+.tableContainer {
      padding-top: 10rem;
      height: 1000px;
 }
 
-.tableSymbol{
+.tableSymbol {
      height: 30px;
      width: 30px;
      align-items: center;
@@ -218,11 +225,11 @@ tr:hover{
 
 
 
- /* header */
+/* header */
 
 
 
-.logoContainer{
+.logoContainer {
      display: flex;
      flex-direction: column;
 }
@@ -231,12 +238,12 @@ header {
      display: flex;
      justify-content: space-between;
      align-items: center;
-     height: 100px;     
+     height: 100px;
      color: white;
      background-color: rgb(23, 24, 25);
 }
 
-.headerItemContainer{
+.headerItemContainer {
      margin: 0 auto;
      width: 1400px;
      display: flex;
@@ -244,19 +251,24 @@ header {
      align-items: center;
 }
 
-.signInBtn{
+.signInBtn {
      margin-right: 5rem;
      border: 3px solid white;
      padding: 1.25rem 2rem 1.25rem 2rem;
      display: block;
      border-radius: 12px;
 }
-.signInBtn:hover{
+
+.signInBtn:hover {
      color: black;
      background-color: white;
      /* border-color: rgb(10, 102, 251); */
 }
 
+
+.nav-button-container {
+     display: flex;
+}
 
 
 
@@ -264,3 +276,90 @@ header {
 
 
 
+
+
+/* PORTFOLIO */
+/* ************************************************* */
+
+
+
+.portfolioCoinItem{
+     color: white;
+     font-size: 14px;
+     margin-bottom: 10px;
+}
+
+.portfolioCoinContainer{
+     color: white;
+     width: 400px;
+     height: 400px;
+     border: 1px solid red;
+}
+
+
+
+
+
+
+
+/* dropdown search menu */
+
+/* Dropdown Button */
+.dropbtn {
+     background-color: #04AA6D;
+     color: white;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+   }
+   
+   /* Dropdown button on hover & focus */
+   .dropbtn:hover, .dropbtn:focus {
+     background-color: #3e8e41;
+   }
+   
+   /* The search field */
+   #myInput {
+     box-sizing: border-box;
+     background-image: url('searchicon.png');
+     background-position: 14px 12px;
+     background-repeat: no-repeat;
+     font-size: 16px;
+     padding: 14px 20px 12px 45px;
+     border: none;
+     border-bottom: 1px solid #ddd;
+   }
+   
+   /* The search field when it gets focus/clicked on */
+   #myInput:focus {outline: 3px solid #ddd;}
+   
+   /* The container <div> - needed to position the dropdown content */
+   .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+   
+   /* Dropdown Content (Hidden by Default) */
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f6f6f6;
+     min-width: 230px;
+     border: 1px solid #ddd;
+     z-index: 1;
+   }
+   
+   /* Links inside the dropdown */
+   .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+   }
+   
+   /* Change color of dropdown links on hover */
+   .dropdown-content a:hover {background-color: #f1f1f1}
+   
+   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+   .show {display:block;}
