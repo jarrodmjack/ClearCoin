@@ -32,7 +32,15 @@
 	</header>
 
 
+	<div>
+		<ul>
+			<% for(let i = 0; i < coins.length; i++) { %>
+				<li class="listItems"> <%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %> </li>
+				<% } %>
+		</ul>
+	</div>
 
+	<!-- 
 	<label for="ice-cream-choice">Currency</label>
 	<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
 	<datalist id="ice-cream-flavors">
@@ -40,6 +48,7 @@
 			<option class="listItems" value="<%= coins[i].name %>">
 		<% } %>
 	</datalist>
+-->
 
 		
 		
@@ -50,6 +59,12 @@
 		<div class="portfolioCoinList">
 		</div>
 	</div>
+
+
+	<div class="chartContainer">
+		
+	</div>
+
 
 
  <!-- <div class="dropdown">

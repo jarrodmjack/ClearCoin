@@ -40,7 +40,7 @@ app.get('/portfolio', async (request, response) => {
     // console.log(coinArray)
     response.render('portfolio.ejs', {coins: coinArray})
 })
-
+    
 
 app.get('/getCurrentCoins', async(req, res) => {
     const coinList = await db.collection('coins').find().toArray()

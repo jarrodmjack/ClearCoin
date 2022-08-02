@@ -14,9 +14,8 @@ let cache
 
 
 
-async function addCoinToPortfolio(e) {
-
-
+async function addCoinToPortfolio(e) { 
+    console.log('list item clicked')
 
     const result = await fetch('/getCurrentCoins')
     const data = await result.json()
@@ -26,10 +25,10 @@ async function addCoinToPortfolio(e) {
     console.log(selectedCurrency)
     let res = data.find(item => item.id === selectedCurrency)
     console.log(res)
-
+    
     // pick quantity of chosen item
     localStorage.setItem(`${res.id}`, JSON.stringify(res))
-
+    window.location.reload()
 }
 
 
@@ -44,29 +43,15 @@ function allStorage() {
     }else{
         throw new Error
     }
-    
 }
 
 
-
-// function displayPortfolioCoins(storedCoins = allStorage()){
-//     // let storedCoins = allStorage()
-
-//     const div = document.querySelector('.portfolioCoinContainer')
-
-//     for(let i = 0; i < storedCoins.length; i++){
-//         let h4 = document.createElement('h4')
-//         h4.innerText = `- ${storedCoins[i].name} +   T`
-//         div.appendChild(h4)
-//     }
-// }
-
-
-function displayPortfolioCoins(storedCoins = allStorage()){
-    // let storedCoins = allStorage()
-
+function displayPortfolioCoins(){
+    let storedCoins = allStorage()
+    console.log('stored coins below')
+    console.log(storedCoins)
     const div = document.querySelector('.portfolioCoinList')
-    div.innerHTML = ''
+
     for(let i = 0; i < storedCoins.length; i++){
         let h4 = document.createElement('h4')
         h4.innerText = `- ${storedCoins[i].name} +   T`
@@ -74,23 +59,44 @@ function displayPortfolioCoins(storedCoins = allStorage()){
     }
 }
 
-// Search coins
-
-// document.querySelector('#testBtn').addEventListener('click', searchCoins)
-
-document.querySelector('#coinSearch').addEventListener('keypress', searchCoins)
-
-function searchCoins(){
-    let storedCoins = allStorage()
-    console.log('onchange func')
-    let coin = document.querySelector('#coinSearch').value.toLowerCase()
+displayPortfolioCoins()
 
 
-    let filteredList = storedCoins.filter(item => item.name.toLowerCase().includes(coin))
 
-    console.log(filteredList)
-    displayPortfolioCoins(filteredList)    
-}
+
+
+// Search coins (enable these to search through owned coins)
+
+// function displayPortfolioCoins(storedCoins = allStorage()){
+//     // let storedCoins = allStorage()
+
+//     const div = document.querySelector('.portfolioCoinList')
+//     div.innerHTML = ''
+//     for(let i = 0; i < storedCoins.length; i++){
+//         let h4 = document.createElement('h4')
+//         h4.innerText = `- ${storedCoins[i].name} +   T`
+//         div.appendChild(h4)
+//     }
+
+// }
+
+
+// document.querySelector('#coinSearch').addEventListener('keypress', searchCoins)
+
+// function searchCoins(){
+//     let storedCoins = allStorage()
+//     console.log('onchange func')
+//     let coin = document.querySelector('#coinSearch').value.toLowerCase()
+
+
+//     let filteredList = storedCoins.filter(item => item.name.toLowerCase().includes(coin))
+
+//     console.log(filteredList)
+//     displayPortfolioCoins(filteredList)    
+// }
+
+
+
 
 
 
