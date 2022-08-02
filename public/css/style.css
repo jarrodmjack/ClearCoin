@@ -283,21 +283,33 @@ header {
 
 
 
-.portfolioCoinItem{
+.portfolioCoinItem {
      color: white;
      font-size: 14px;
      margin-bottom: 10px;
 }
 
-.portfolioCoinContainer{
+.portfolioCoinContainer {
      color: white;
      width: 400px;
      height: 400px;
      border: 1px solid red;
 }
 
+.addableCoinsContainer {
+     border: 1px solid green;
+}
 
 
+.portfolioContentContainer {
+     display: flex;
+     justify-content: space-around;
+}
+
+.personalItemsContainer {
+     display: flex;
+     flex-direction: column;
+}
 
 
 
@@ -312,15 +324,16 @@ header {
      font-size: 16px;
      border: none;
      cursor: pointer;
-   }
-   
-   /* Dropdown button on hover & focus */
-   .dropbtn:hover, .dropbtn:focus {
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
      background-color: #3e8e41;
-   }
-   
-   /* The search field */
-   #myInput {
+}
+
+/* The search field */
+#myInput {
      box-sizing: border-box;
      background-image: url('searchicon.png');
      background-position: 14px 12px;
@@ -329,50 +342,98 @@ header {
      padding: 14px 20px 12px 45px;
      border: none;
      border-bottom: 1px solid #ddd;
-   }
-   
-   /* The search field when it gets focus/clicked on */
-   #myInput:focus {outline: 3px solid #ddd;}
-   
-   /* The container <div> - needed to position the dropdown content */
-   .dropdown {
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {
+     outline: 3px solid #ddd;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
      position: relative;
      display: inline-block;
-   }
-   
-   /* Dropdown Content (Hidden by Default) */
-   .dropdown-content {
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
      display: none;
      position: absolute;
      background-color: #f6f6f6;
      min-width: 230px;
      border: 1px solid #ddd;
      z-index: 1;
-   }
-   
-   /* Links inside the dropdown */
-   .dropdown-content a {
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
      color: black;
      padding: 12px 16px;
      text-decoration: none;
      display: block;
-   }
-   
-   /* Change color of dropdown links on hover */
-   .dropdown-content a:hover {background-color: #f1f1f1}
-   
-   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-   .show {display:block;}
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+     background-color: #f1f1f1
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+     display: block;
+}
 
 
 
+/* Personal assets table */
+
+.listItems{
+     color: white;
+}
+
+.portfolioCoinContainer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+}
+
+.portfolioListItem {
+     border: 1px solid gray;
+}
 
 
+.portfolioAssetsTable {
+     width: 300px;
+     height: 300px;
+}
 
-   /* Chart container */
-   
-   .chartContainer{
+
+.portfolioAssetsHeadings {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #04AA6D;
+     color: white;
+}
+
+
+.noAssetsMsg{
+     color: white;
+     font-size: 30px;
+}
+
+.visible{
+     display: none;
+}
+
+
+/* Chart container */
+
+.chartContainer {
      width: 600px;
      height: 280px;
      border: 1px solid cyan;
-   }
+     color: white;
+     font-size: 40px;
+}

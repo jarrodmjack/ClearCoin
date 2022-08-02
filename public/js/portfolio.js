@@ -41,7 +41,8 @@ function allStorage() {
         }
         return array
     }else{
-        throw new Error
+        const noAssets = document.querySelector('.noAssetsMsg')
+        noAssets.classList.remove('visible')
     }
 }
 
@@ -55,11 +56,45 @@ function displayPortfolioCoins(){
     for(let i = 0; i < storedCoins.length; i++){
         let h4 = document.createElement('h4')
         h4.innerText = `- ${storedCoins[i].name} +   T`
+        h4.classList.add('portfolioListItem')
         div.appendChild(h4)
     }
 }
 
 displayPortfolioCoins()
+
+
+
+// Generating portfolio asset table data from localstorage  
+function generatePortfolioTableData(){
+    const tableData = allStorage()
+    console.log('tabledata below')
+    console.log(tableData)
+    const tbody = document.querySelector('.portfolioAssetsTableBody')
+    for(let i = 0; i < tableData.length; i++){
+        const tr = document.createElement('tr')
+        let portfolioAssetName = document.createElement('td')
+        let portfolioAssetPrice = document.createElement('td')
+        let portfolioAssetQty = document.createElement('td')
+        tbody.appendChild(tr)
+        portfolioAssetName.innerText = `${tableData[i].name}`
+        portfolioAssetPrice.innerText = `${tableData[i].currentprice}`
+        portfolioAssetQty.innerText = `${tableData[i].amount}`
+        tbody.appendChild(portfolioAssetName)
+        tbody.appendChild(portfolioAssetPrice)
+        tbody.appendChild(portfolioAssetQty)
+    }
+
+}
+
+generatePortfolioTableData()
+
+
+
+
+
+
+
 
 
 

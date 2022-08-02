@@ -32,15 +32,18 @@
 	</header>
 
 
-	<div>
-		<ul>
-			<% for(let i = 0; i < coins.length; i++) { %>
-				<li class="listItems"> <%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %> </li>
-				<% } %>
-		</ul>
-	</div>
+	<section class="portfolioContentContainer">
+		<div class="addableCoinsContainer">
+			<ul class="addableCoinsList">
+				<% for(let i=0; i < coins.length; i++) { %>
+					<li class="listItems">
+						<%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %>
+					</li>
+					<% } %>
+			</ul>
+		</div>
 
-	<!-- 
+		<!-- 
 	<label for="ice-cream-choice">Currency</label>
 	<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
 	<datalist id="ice-cream-flavors">
@@ -50,24 +53,63 @@
 	</datalist>
 -->
 
-		
-		
+	<div class="personalItemsContainer">
+		<div class="chartContainer">
+			<h4>THIS WILL BE A CHART</h4>
+		</div>
 
-	<div class="portfolioCoinContainer">
-		<input id="coinSearch" type="search">
-		<input id="testBtn" type="submit">
-		<div class="portfolioCoinList">
+		<div class="portfolioCoinContainer">
+			<!-- <input id="coinSearch" type="search">
+			<input id="testBtn" type="submit"> -->
+			<div class="portfolioCoinList">
+			</div>
 		</div>
 	</div>
 
 
-	<div class="chartContainer">
+<div class="portfolioTableContainer">
+	<h3 class="noAssetsMsg visible">No current assets</h3>
+	<table class="portfolioAssetsTable">
+		<thead class="portfolioAssetsHeadings">
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>QTY</th>
+			</tr>
+		</thead>
+		<tbody class="portfolioAssetsTableBody">
+			
+			<!-- <tr>
+				<td>Bitcoin</td>
+				<td>$23004</td>
+				<td>42</td>
+			</tr>
+			<tr>
+				<td>Bitcoin</td>
+				<td>$23004</td>
+				<td>42</td>
+			</tr>
+			<tr>
+				<td>Bitcoin</td>
+				<td>$23004</td>
+				<td>42</td>
+			</tr>
+			<tr>
+				<td>Bitcoin</td>
+				<td>$23004</td>
+				<td>42</td>
+			</tr> -->
 		
-	</div>
+		</tbody>
+	</table>
+</div>
+	<!-- For each loop, create a tr > 3 tds -->
 
 
 
- <!-- <div class="dropdown">
+	</section>
+
+	<!-- <div class="dropdown">
 	<button class="dropbtn">Dropdown</button>
 	<div id="myDropdown" class="dropdown-content">
 	  <input  type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
@@ -76,15 +118,15 @@
   </div>
  -->
 
-  
 
 
-			<!-- <h2>Left to do</h2>   -->
 
-			<!-- <h2>Add A Todo:</h2> -->
+	<!-- <h2>Left to do</h2>   -->
+
+	<!-- <h2>Add A Todo:</h2> -->
 
 
-			<!-- <form action="/addTodo" method="POST"> 
+	<!-- <form action="/addTodo" method="POST"> 
         <input type="text" placeholder="Quantity" name="todoItem">
         <input type="submit">
     </form> -->
@@ -93,9 +135,9 @@
 
 
 
-			<!-- <script src="/js/portfolio.js"></script> -->
-			<script type="module" src="/js/portfolio.js"></script>
-			<script src="js/tablesort.js"></script>
+	<!-- <script src="/js/portfolio.js"></script> -->
+	<script type="module" src="/js/portfolio.js"></script>
+	<script src="js/tablesort.js"></script>
 </body>
 
 </html>
