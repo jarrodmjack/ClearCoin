@@ -186,12 +186,16 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
       const tdImg = document.createElement('img')
       tdImg.classList.add('tableSymbol')
       // tdImg.src = data.coins[i].item.thumb
+
+      const td0 = document.createElement('td')
+      td0.appendChild(tdImg)
+      tr.appendChild(td0)
+
       const td1 = document.createElement('td')
-      tr.appendChild(tdImg)
+     
       tr.appendChild(td1)
       tdImg.src = data[i].image
       td1.innerText = data[i].name
-      // console.log(tdImg)
 
 
       const td2 = document.createElement('td')

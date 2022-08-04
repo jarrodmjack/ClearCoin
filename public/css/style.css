@@ -159,7 +159,7 @@ tr {
      border-bottom: 1px solid rgb(181, 178, 178);
      border-top: 1px solid rgb(181, 178, 178);
      height: 50px;
-
+  
 }
 
 th.price:hover {
@@ -219,8 +219,7 @@ tr:hover {
 .tableSymbol {
      height: 30px;
      width: 30px;
-     align-items: center;
-     text-align: center;
+    
 }
 
 
@@ -292,7 +291,7 @@ header {
 .portfolioCoinContainer {
      color: white;
      width: 400px;
-     height: 400px;
+     /* height: 400px; */
      border: 1px solid red;
 }
 
@@ -404,10 +403,17 @@ header {
 
 
 .portfolioAssetsTable {
-     width: 300px;
+     width: 500px;
      height: 300px;
 }
 
+.portfolioTh{
+     padding: 5px;
+}
+
+.portfolioAssetsTable td{
+     padding: 5px;
+}
 
 .portfolioAssetsHeadings {
      padding-top: 12px;
@@ -425,6 +431,12 @@ header {
 
 .visible{
      display: none;
+}
+
+
+.portfolioBalance{
+     color: white;
+     font-size: 24px;
 }
 
 
