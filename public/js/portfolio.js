@@ -100,30 +100,46 @@ generatePortfolioTableData()
 // add 1 to the currency quantity
 // document.querySelectorAll('.addQty').addEventListener('click', addPortfolioCurrencyQty)
 
+
 let addQtyBtn = document.querySelectorAll('.addQty')
-Array.from(addQtyBtn).forEach((element) => { //create an array from deleteBtn variable
-    element.addEventListener('click', addPortfolioCurrencyQty) //add a click event listener to each item
+Array.from(addQtyBtn).forEach((element) => { 
+    element.addEventListener('click', findCurrencyToAddQtyTo) //add a click event listener to each item
 })
 
 
+// async function findCurrencyToAddQtyTo(e){
+//     let selectedCurrency = await e.target.parentNode.childNodes[0].innerText.toLowerCase() //targeting name of currency in the table
+//     // go into localstorage and get this currency found above
+//     // open the modal and get the value from the input
+//     // use that value to update the qty for the item
 
-function addPortfolioCurrencyQty(e){
+// }
 
-            const data = allStorage()
 
-      
-            let currencyToAddTo = e.target.parentNode.childNodes[0].innerText.toLowerCase() //targeting name of currency in the table
-            // console.log(currencyToAddTo)
-            let currencyInStorage = JSON.parse(localStorage.getItem(currencyToAddTo))
-            currencyInStorage.amount += 1
-            // localStorage.setItem(curren)
+
+
+async function addPortfolioCurrencyQty(e){
+
+            let currencyToAddTo = await e.target.parentNode.childNodes[0].innerText.toLowerCase() //targeting name of currency in the table
+            let currencyInStorage = await JSON.parse(localStorage.getItem(currencyToAddTo))
+            // currencyInStorage.amount += 1
+            const modal = document.querySelector('.addQtyModal')
+            modal.classList.remove('visible')
             localStorage.setItem(currencyInStorage.id, JSON.stringify(currencyInStorage))
+            // window.location.reload()
 }
 
 
+// Modal input
+document.querySelector('#addQtyModalSubmit').addEventListener('click', getQtyToAdd)
+
+async function getQtyToAdd(){
+    const qtyToAdd = document.querySelector('#addQtyModalInput').value
+    return qtyToAdd
+}
+
 
 // Get sum to display in a chart
-
 function getPortfolioSum(){
     let data = allStorage()
     let sum = 0;
