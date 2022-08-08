@@ -76,6 +76,7 @@ function generatePortfolioTableData(){
         let portfolioAssetPrice = document.createElement('td')
         let portfolioAssetQty = document.createElement('td')
         let portfolioAssetActions = document.createElement('td')
+        portfolioAssetQty.classList.add('currencyQuantity')
         portfolioAssetSymb.innerText  = `${tableData[i].id}`
         portfolioAssetName.innerText = `${tableData[i].name}`
         portfolioAssetPrice.innerText = `$${tableData[i].currentprice}`
@@ -97,46 +98,79 @@ generatePortfolioTableData()
 
 
 
-// add 1 to the currency quantity
-// document.querySelectorAll('.addQty').addEventListener('click', addPortfolioCurrencyQty)
-
-
-let addQtyBtn = document.querySelectorAll('.addQty')
-Array.from(addQtyBtn).forEach((element) => { 
-    element.addEventListener('click', findCurrencyToAddQtyTo) //add a click event listener to each item
-})
-
-
-// async function findCurrencyToAddQtyTo(e){
-//     let selectedCurrency = await e.target.parentNode.childNodes[0].innerText.toLowerCase() //targeting name of currency in the table
-//     // go into localstorage and get this currency found above
-//     // open the modal and get the value from the input
-//     // use that value to update the qty for the item
-
-// }
 
 
 
 
-async function addPortfolioCurrencyQty(e){
-
-            let currencyToAddTo = await e.target.parentNode.childNodes[0].innerText.toLowerCase() //targeting name of currency in the table
-            let currencyInStorage = await JSON.parse(localStorage.getItem(currencyToAddTo))
-            // currencyInStorage.amount += 1
-            const modal = document.querySelector('.addQtyModal')
-            modal.classList.remove('visible')
-            localStorage.setItem(currencyInStorage.id, JSON.stringify(currencyInStorage))
-            // window.location.reload()
-}
 
 
-// Modal input
-document.querySelector('#addQtyModalSubmit').addEventListener('click', getQtyToAdd)
 
-async function getQtyToAdd(){
-    const qtyToAdd = document.querySelector('#addQtyModalInput').value
-    return qtyToAdd
-}
+
+
+// VARIABLES FOR MODAL FUNCTIONALITY
+// item that displays current count (table data)
+// add button (+)
+// modal
+// close modal button
+// number input
+// submit button
+
+
+let globalCounter = 0;
+
+const modal = document.querySelector('.addQtyModal');
+modal.style.display = "none";
+const closeModalBtn = document.querySelector('#closeModalBtn');
+const numberInput = document.querySelector('#numberInput');
+const submitModalBtn = document.querySelector('#submitModalBtn');
+const tdCurrencyQty = document.querySelector('.currencyQuantity')
+
+
+function my_prompt() {
+    return new Promise((resolve, reject) => {
+      modal.style.display = "block";
+      const cleanup = () => {
+        modal.style.display = "none";
+        submitModalBtn.removeEventListener('click', onSubmit);
+        closeModalBtn.removeEventListener('click', onClose);
+      };
+
+      const onSubmit = () => {
+        cleanup();
+        resolve(parseInt(numberInput.value, 10));
+      };
+
+      const onClose = () => {
+        cleanup();
+        resolve(null);
+      };
+
+      submitModalBtn.addEventListener('click', onSubmit);
+      closeModalBtn.addEventListener('click', onClose);
+    });
+  }
+
+  tdCurrencyQty.addEventListener("click", async () => {
+    const add_value = await my_prompt();
+    if (add_value === null) {
+      return;
+    }
+
+    globalCounter += add_value;
+
+    // instead of printing to a span, I want to update the qty content of the object from localstorage
+    counter_span.textContent = globalCounter.toString();
+  });
+
+
+
+
+
+
+
+
+
+
 
 
 // Get sum to display in a chart
