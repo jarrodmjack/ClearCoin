@@ -76,13 +76,14 @@ function generatePortfolioTableData(){
         let portfolioAssetPrice = document.createElement('td')
         let portfolioAssetQty = document.createElement('td')
         let portfolioAssetActions = document.createElement('td')
-        portfolioAssetQty.classList.add('currencyQuantity')
+        portfolioAssetActions.setAttribute('id', `${tableData[i].id}`)
+        portfolioAssetActions.classList.add('addQty')
         portfolioAssetSymb.innerText  = `${tableData[i].id}`
         portfolioAssetName.innerText = `${tableData[i].name}`
         portfolioAssetPrice.innerText = `$${tableData[i].currentprice}`
         portfolioAssetQty.innerText = `${tableData[i].amount}`
         portfolioAssetActions.innerText = `+`
-        portfolioAssetActions.classList.add('addQty')
+        // portfolioAssetActions.classList.add('addQty')
 
         let tr = document.createElement('tr')
         tr.appendChild(portfolioAssetSymb)
@@ -150,17 +151,45 @@ function my_prompt() {
     });
   }
 
-  tdCurrencyQty.addEventListener("click", async () => {
-    const add_value = await my_prompt();
-    if (add_value === null) {
+//   make click event for + buttons. on click, I need to get the item currency I clicked on, get that item from localstorage and try to change the value of that item rather than 
+
+  const addQtyTds =document.querySelectorAll('.addQty')
+
+  Array.from(addQtyTds).forEach(item => {
+    item.addEventListener('click', currencyToAddTo)
+  })
+
+
+
+  
+
+
+async function currencyToAddTo(e) {
+    let currencyToTargetInLS = this.parentNode.childNodes[0].innerText
+
+    const addValue = await my_prompt();
+    if(addValue === null) {
       return;
     }
 
-    globalCounter += add_value;
 
-    // instead of printing to a span, I want to update the qty content of the object from localstorage
-    counter_span.textContent = globalCounter.toString();
-  });
+    // get item from local storage
+    let storageItem = JSON.parse(localStorage.getItem(currencyToTargetInLS));
+    storageItem.amount += addValue
+       localStorage.setItem(currencyToTargetInLS, JSON.stringify(storageItem))
+    window.location.reload()
+    // set item's qty to add value qty
+}
+  //   const add_value = await my_prompt();
+  //   if (add_value === null) {
+  //     return;
+  //   }
+
+  //   globalCounter += add_value;
+
+  //   // instead of printing to a span, I want to update the qty content of the object from localstorage
+  //   counter_span.textContent = globalCounter.toString();
+  // };
 
 
 
