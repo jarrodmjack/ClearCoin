@@ -33,7 +33,7 @@
 
 
 	<section class="portfolioContentContainer">
-		<div class="addableCoinsContainer">
+		<!-- <div class="addableCoinsContainer">
 			<ul class="addableCoinsList">
 				<% for(let i=0; i < coins.length; i++) { %>
 					<li class="listItems">
@@ -41,7 +41,24 @@
 					</li>
 					<% } %>
 			</ul>
-		</div>
+		</div> -->
+
+		
+		<div class="dropdown">
+			<h3 class="dropdownHeading">Add a currency to your tracker</h3>
+			<button id="dropdownBtn" class="dropbtn">Currencies</button>
+			<div id="myDropdown" class="dropdown-content">
+			  <input type="text" placeholder="Search.." id="myInput">
+
+			<% if (coins.length > 0){ %>
+			<% for(let i=0; i < coins.length; i++) {%>
+				<a href="" class="listItems"> <%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %></a>
+			<% } %>
+			<% } else {%>
+				<a href="" class="listItem">Data Not available</a>
+			<% } %>
+			</div>
+		  </div>
 
 		<!-- 
 	<label for="ice-cream-choice">Currency</label>
@@ -54,9 +71,7 @@
 -->
 
 		<div onclick="" class="personalItemsContainer">
-			<div class="chartContainer">
-				<h4>THIS WILL BE A CHART</h4>
-			</div>
+			<div id="chart"></div>
 
 			<div class="portfolioCoinContainer">
 				<!-- <input id="coinSearch" type="search">
@@ -96,7 +111,8 @@
 
 
 
-
+			  
+	
 
 
 	</section>
@@ -130,6 +146,7 @@
 	<!-- <script src="/js/portfolio.js"></script> -->
 	<script type="module" src="/js/portfolio.js"></script>
 	<script src="js/tablesort.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </body>
 
 </html>
