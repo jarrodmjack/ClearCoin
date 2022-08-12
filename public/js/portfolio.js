@@ -1,13 +1,13 @@
 // const { localsName } = require("ejs")
 
-// let test = {
-//   name: "Bitcoin",
-//   currentprice: 30027,
-//   id: "btc",
-//   amount: 0
-//   }
+let test = {
+  name: "Bitcoin",
+  currentprice: 30027,
+  id: "btc",
+  amount: 0
+  }
 
-//   localStorage.setItem(`btc`, JSON.stringify(test))
+  localStorage.setItem(`btc`, JSON.stringify(test))
 
 
 // VARIABLES FOR MODAL FUNCTIONALITY

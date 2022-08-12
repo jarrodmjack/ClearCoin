@@ -43,22 +43,24 @@
 			</ul>
 		</div> -->
 
-		
+
 		<div class="dropdown">
 			<h3 class="dropdownHeading">Add a currency to your tracker</h3>
 			<button id="dropdownBtn" class="dropbtn">Currencies</button>
 			<div id="myDropdown" class="dropdown-content">
-			  <input type="text" placeholder="Search.." id="myInput">
+				<input type="text" placeholder="Search.." id="myInput">
 
-			<% if (coins.length > 0){ %>
-			<% for(let i=0; i < coins.length; i++) {%>
-				<a href="" class="listItems"> <%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %></a>
-			<% } %>
-			<% } else {%>
-				<a href="" class="listItem">Data Not available</a>
-			<% } %>
+				<% if (coins.length> 0){ %>
+					<% for(let i=0; i < coins.length; i++) {%>
+						<h3 class="listItems">
+							<%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %>
+						</h3>
+						<% } %>
+							<% } else {%>
+								<a href="" class="listItem">Data Not available</a>
+								<% } %>
 			</div>
-		  </div>
+		</div>
 
 		<!-- 
 	<label for="ice-cream-choice">Currency</label>
@@ -79,11 +81,15 @@
 				<!-- <div class="portfolioCoinList">
 			</div> -->
 				<div class="addQtyModal">
-					<h2>Please enter Quantity</h2>
-					<button id="closeModalBtn">Close</button>
-					<div class="addQtyModalInputContainer">
-						<input id="numberInput" type="number">
-						<button id="submitModalBtn">Submit</button>
+					<div class="modalItemContainer">
+						<div class="modalCloseBtnContainer">
+						<button id="closeModalBtn">Close</button>
+					</div>
+						<h2>Please enter Quantity</h2>
+						<div class="addQtyModalInputContainer">
+							<input id="numberInput" type="number">
+							<button id="submitModalBtn">Submit</button>
+						</div>
 					</div>
 				</div>
 
@@ -111,8 +117,8 @@
 
 
 
-			  
-	
+
+
 
 
 	</section>
