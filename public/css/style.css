@@ -318,14 +318,16 @@ header {
      background-color: rgb(236, 230, 225);
      width: 300px;
      height: 200px;
-     background-color: white;
+     background-color: #19191c;
      /* border: 2px solid cyan; */
      border-radius: 10px;
-     color: black;
+     color: #f4f7f9;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     -webkit-box-shadow: 0px 0px 32px 5px rgba(0,0,0,0.58); 
+     box-shadow: 0px 0px 32px 5px rgba(0,0,0,0.58);
 }
 
 .modalCloseBtnContainer{
@@ -336,7 +338,32 @@ header {
      display: flex;
      flex-direction: column;
      align-items: center;
-     border: 1px solid green;
+     /* border: 1px solid green; */
+     gap: 12px;
+}
+
+#closeModalBtn{
+    color: black;
+    background-color: white;
+}
+
+#numberInput{
+     border: none;
+     outline: 2px solid rgb(128, 130, 128);
+     border-radius: 5px;
+     height: 40px;
+     width: 100px;
+     font-size: 25px;
+}
+
+#numberInput:hover{
+      outline: 1px solid cyan;
+      border-radius: 5px;
+}
+
+#numberInput:focus{
+     outline: 2px solid rgb(45, 179, 184);
+     border-radius: 5px;
 }
 
 .addQtyModal button {
@@ -348,19 +375,25 @@ header {
      border-radius: 10px;
 }
 
+.addQtyModal h2 {
+     font-size: 20px;
+     font-weight: bold;
+}
+
 .addQtyModal button:hover{
      cursor: pointer;
      background-color: #2868a0;
 }
 
 .addQtyModal h2 {
-     color: black;
+     color: #f4f7f9;
 }
 
 .addQtyModalInputContainer{
      display: flex;
      flex-direction: column;
      align-items: center;
+     gap: 12px;
 }
 
 
