@@ -1,13 +1,13 @@
 // const { localsName } = require("ejs")
 
-let test = {
-  name: "Bitcoin",
-  currentprice: 30027,
-  id: "btc",
-  amount: 0
-  }
+// let test = {
+//   name: "Bitcoin",
+//   currentprice: 30027,
+//   id: "btc",
+//   amount: 0
+//   }
 
-  localStorage.setItem(`btc`, JSON.stringify(test))
+//   localStorage.setItem(`btc`, JSON.stringify(test))
 
 
 // VARIABLES FOR MODAL FUNCTIONALITY
@@ -138,22 +138,33 @@ async function generatePortfolioTableData(){
         let portfolioAssetName = document.createElement('td')
         let portfolioAssetPrice = document.createElement('td')
         let portfolioAssetQty = document.createElement('td')
-        let portfolioAssetActions = document.createElement('td')
-        portfolioAssetActions.setAttribute('id', `${tableData[i].id}`)
-        portfolioAssetActions.classList.add('addQty')
+        let portfolioAssetAdd = document.createElement('td')
+        let portfolioAssetDelete = document.createElement('td')
+        let deleteSpan = document.createElement('span')
+        // deleteSpan.classList.add('fa')
+        // deleteSpan.classList.add('fa-trash')
+        portfolioAssetAdd.setAttribute('id', `${tableData[i].id}`)
+        portfolioAssetAdd.classList.add('addQty')
         portfolioAssetSymb.innerText  = `${tableData[i].id}`
         portfolioAssetName.innerText = `${tableData[i].name}`
         portfolioAssetPrice.innerText = `$${tableData[i].currentprice}`
         portfolioAssetQty.innerText = `${tableData[i].amount}`
-        portfolioAssetActions.innerText = `+`
-        // portfolioAssetActions.classList.add('addQty')
+        portfolioAssetAdd.innerText = `+`
+        portfolioAssetDelete.appendChild(deleteSpan)
+        deleteSpan.classList.add('fa')
+        deleteSpan.classList.add('fa-trash')
+
+
+        // fa fa-trash
+        // portfolioAssetAdd.classList.add('addQty')
 
         let tr = document.createElement('tr')
         tr.appendChild(portfolioAssetSymb)
         tr.appendChild(portfolioAssetName)
         tr.appendChild(portfolioAssetPrice)
         tr.appendChild(portfolioAssetQty)
-        tr.appendChild(portfolioAssetActions)
+        tr.appendChild(portfolioAssetAdd)
+        tr.appendChild(portfolioAssetDelete)
         tbody.appendChild(tr)
     }
   } catch (err){
@@ -202,6 +213,26 @@ async function currencyToAddTo() {
 
 
 
+  let deleteBtns = document.querySelectorAll('.fa-trash')
+
+  Array.from(deleteBtns).forEach(item => {
+    item.addEventListener('click', deleteCoinFromPortfolio)
+  })
+
+  // DELETE ITEM FROM TABLE
+  async function deleteCoinFromPortfolio(e) { 
+    let currencyToDelete = this.parentNode.parentNode.childNodes[0].innerText
+    
+    // let currencyInLS = localStorage.getItem(currencyToDelete)
+    localStorage.removeItem(currencyToDelete)
+
+      window.location.reload()
+
+}
+
+
+
+
 
 
 
@@ -220,7 +251,8 @@ function getPortfolioSum(){
             sum += data[i].currentprice * data[i].amount
         }
         let balance = document.querySelector('.portfolioBalance')
-        balance.innerText = `Current Balance: $${sum.toFixed(2)} CAD`    
+        balance.innerText = `Current Balance: $${sum.toFixed(2)} CAD`
+        return sum.toFixed(2)
  }
  getPortfolioSum()
 
@@ -256,6 +288,74 @@ function filterFunction() {
     }
   }
 }
+
+
+
+// PORTFOLIO CHART
+async function generateChart(){
+
+  try{
+
+    let storedCoins = await allStorage()
+    let currentPortfolioSum = getPortfolioSum()
+    console.log(currentPortfolioSum)
+
+    let percentages = []
+    let currencies = []
+
+    for(let i = 0; i < storedCoins.length; i++){
+      
+      let perc = storedCoins[i].currentprice * storedCoins[i].amount
+      let percentage = (perc / currentPortfolioSum) * 100
+      currencies.push(storedCoins[i].id.toUpperCase())
+      percentages.push(Number(percentage.toFixed(2)))
+      console.log(storedCoins[i].id)
+    }
+
+    console.log(percentages)
+ 
+  
+  
+    let options = {
+      series: percentages,
+      chart: {
+      width: 400,
+      type: 'pie',
+    },
+    labels: currencies,
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200
+        },
+      }
+    }]
+    };
+    
+    let chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  
+
+  } catch(err) {
+    console.error(err)
+  }
+  
+}
+
+generateChart()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

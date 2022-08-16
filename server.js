@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = process.env.port || 3450
+const axios = require("axios");
 require('dotenv').config()
 
 
@@ -47,6 +48,31 @@ app.get('/getCurrentCoins', async(req, res) => {
     const coins = coinList[0].coin
     res.json(coins)
 })
+
+
+app.get('/news', async(req, res) => {
+    let news;
+    const options = {
+        method: 'GET',
+        url: `https://bing-news-search1.p.rapidapi.com/news/search`,
+        params: { q: `cryptocurrency`, freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off' },
+        headers: {
+            'X-BingApis-SDK': 'true',
+            'X-RapidAPI-Key': 'db3e8ae18bmshd7bb610557d438fp1e9721jsneadf0cccb21c',
+            'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+        }
+    };
+      
+      axios.request(options).then(function (response) {
+        console.log(response.data)
+        // console.log(news)
+      }).catch(function (error) {
+          console.error(error);
+      });
+    // res.render('news.ejs', { newsData: news })
+    // console.log(news)
+})
+
 
 
 app.post('/addCoinsToDb', (req, res) => {

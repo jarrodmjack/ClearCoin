@@ -213,7 +213,7 @@ tr:hover {
 
 .tableContainer {
      padding-top: 10rem;
-     height: 1000px;
+     /* height: 1000px; */
 }
 
 .tableSymbol {
@@ -533,4 +533,8 @@ header {
 
 /* Chart container */
 
+
+div.apexcharts-legend-series span.apexcharts-legend-text{
+     color: white;
+}
 
