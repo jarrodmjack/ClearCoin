@@ -20,7 +20,7 @@
 
 <body class="portfolioBody">
 
-	<header>
+	<header id="headerContainer">
 		<div class="headerItemContainer">
 			<a href="#">
 				<h1>ClearCoin</h1>
@@ -46,7 +46,7 @@
 		</div> -->
 
 
-		<div class="dropdown">
+		<div id="dropContainer" class="dropdown">
 			<h3 class="dropdownHeading">Add a currency to your portfolio</h3>
 			<button id="dropdownBtn" class="dropbtn">Currencies</button>
 			<div id="myDropdown" class="dropdown-content">
@@ -62,6 +62,19 @@
 								<a href="" class="listItem">Data Not available</a>
 								<% } %>
 			</div>
+			
+		</div>
+		<div class="isNotBlurred addQtyModal">
+			<div class="modalItemContainer">
+				<div class="modalCloseBtnContainer">
+				<button id="closeModalBtn">X</button>
+			</div>
+				<h2>Please enter Quantity</h2>
+				<div class="addQtyModalInputContainer">
+					<input id="numberInput" type="number" placeholder="0">
+					<button id="submitModalBtn">Add to Portfolio</button>
+				</div>
+			</div>
 		</div>
 
 		<!-- 
@@ -74,26 +87,17 @@
 	</datalist>
 -->
 
-		<div onclick="" class="personalItemsContainer">
-			<div id="chart"></div>
+		<div id="portfolioItems" onclick="" class="personalItemsContainer">
+			<div id="chart">
+
+			</div>
 
 			<div class="portfolioCoinContainer">
 				<!-- <input id="coinSearch" type="search">
 			<input id="testBtn" type="submit"> -->
 				<!-- <div class="portfolioCoinList">
 			</div> -->
-				<div class="addQtyModal">
-					<div class="modalItemContainer">
-						<div class="modalCloseBtnContainer">
-						<button id="closeModalBtn">X</button>
-					</div>
-						<h2>Please enter Quantity</h2>
-						<div class="addQtyModalInputContainer">
-							<input id="numberInput" type="number" placeholder="0">
-							<button id="submitModalBtn">Add to Portfolio</button>
-						</div>
-					</div>
-				</div>
+				
 
 				<div class="portfolioTableContainer">
 					<h3 class="noAssetsMsg visible">No current assets</h3>

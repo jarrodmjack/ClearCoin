@@ -159,7 +159,7 @@ tr {
      border-bottom: 1px solid rgb(181, 178, 178);
      border-top: 1px solid rgb(181, 178, 178);
      height: 50px;
-  
+
 }
 
 th.price:hover {
@@ -219,7 +219,7 @@ tr:hover {
 .tableSymbol {
      height: 30px;
      width: 30px;
-    
+
 }
 
 
@@ -314,27 +314,34 @@ header {
 
 /* quantity modal for portfolio */
 
-.addQtyModal{
+.addQtyModal {
+     z-index: 2;
      background-color: rgb(236, 230, 225);
      width: 300px;
      height: 200px;
-     background-color: #19191c;
-     /* border: 2px solid cyan; */
-     border-radius: 10px;
-     color: #f4f7f9;
+     background-color: #17161b;
+     border-radius: 12px;
+     color: #fef2e2;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     -webkit-box-shadow: 0px 0px 32px 5px rgba(0,0,0,0.58); 
-     box-shadow: 0px 0px 32px 5px rgba(0,0,0,0.58);
+     -webkit-box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 0.58);
+     box-shadow: 0px 0px 32px 5px rgba(0, 0, 0, 0.58);
+     position: absolute;
+     margin-left: auto;
+     margin-right: auto;
+     left: 0;
+     right: 0;
+     text-align: center;
+     top: 200px;
 }
 
-.modalCloseBtnContainer{
+.modalCloseBtnContainer {
      align-self: flex-end;
 }
 
-.modalItemContainer{
+.modalItemContainer {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -342,12 +349,17 @@ header {
      gap: 12px;
 }
 
-#closeModalBtn{
-    color: black;
-    background-color: white;
+#closeModalBtn {
+     color: black;
+     background-color: white;
+     padding: 1rem;
 }
 
-#numberInput{
+#closeModalBtn:hover {
+     background-color: rgb(174, 171, 171);
+}
+
+#numberInput {
      border: none;
      outline: 2px solid rgb(128, 130, 128);
      border-radius: 5px;
@@ -356,23 +368,24 @@ header {
      font-size: 25px;
 }
 
-#numberInput:hover{
-      outline: 1px solid cyan;
-      border-radius: 5px;
+#numberInput:hover {
+     outline: 1px solid cyan;
+     border-radius: 5px;
 }
 
-#numberInput:focus{
+#numberInput:focus {
      outline: 2px solid rgb(45, 179, 184);
      border-radius: 5px;
 }
 
 .addQtyModal button {
-     background-color: #41a5b6;
+     background-color: #3648d6;
      color: white;
      font-weight: bold;
-     padding: 1rem;
+     padding: 1.5rem 2rem;
      border: none;
      border-radius: 10px;
+
 }
 
 .addQtyModal h2 {
@@ -380,16 +393,16 @@ header {
      font-weight: bold;
 }
 
-.addQtyModal button:hover{
+.addQtyModal button:hover {
      cursor: pointer;
-     background-color: #2868a0;
+     background-color: #19246a;
 }
 
 .addQtyModal h2 {
      color: #f4f7f9;
 }
 
-.addQtyModalInputContainer{
+.addQtyModalInputContainer {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -397,19 +410,27 @@ header {
 }
 
 
-#counter_span{
+#counter_span {
      color: white;
      font-size: 30px;
 }
 
 
+.isBlurred {
+     filter: blur(2px);
+     -webkit-filter: blur(2px);
+     transition: .3s ease-in-out;
+   }
 
-
+   .isNotBlurred{
+     filter: none;
+     -webkit-filter: none;
+   }
 
 
 /* dropdown search menu */
 
-.dropdownHeading{
+.dropdownHeading {
      color: white;
      font-size: 20px;
 }
@@ -424,13 +445,14 @@ header {
      cursor: pointer;
      border-radius: 5px;
      transition: ease .3s;
-   }
-   
-   .dropbtn:hover, .dropbtn:focus {
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
      background-color: #2868a0;
-   }
-   
-   #myInput {
+}
+
+#myInput {
      box-sizing: border-box;
      /* background-image: url('searchicon.png'); */
      background-position: 14px 12px;
@@ -439,19 +461,21 @@ header {
      padding: 14px 20px 12px 45px;
      border: none;
      border-bottom: 1px solid #ddd;
-   }
-   
-   #myInput:focus {outline: 3px solid #ddd;}
-   
-   .dropdown {
+}
+
+#myInput:focus {
+     outline: 3px solid #ddd;
+}
+
+.dropdown {
      position: relative;
      display: inline-block;
      height: 400px;
      width: 300px;
-   overflow: auto;
-   }
-   
-   .dropdown-content {
+     overflow: auto;
+}
+
+.dropdown-content {
      display: none;
      position: absolute;
      background-color: #f6f6f6;
@@ -459,22 +483,26 @@ header {
      overflow: auto;
      border: 1px solid #ddd;
      z-index: 1;
-   }
-   
-   .dropdown-content h3 {
+}
+
+.dropdown-content h3 {
      color: black;
      padding: 12px 16px;
      text-decoration: none;
      display: block;
      font-size: 16px;
-   }
-   
-   .dropdown h3:hover {background-color: #ddd;}
-   
-   .show {display: block;}
+}
+
+.dropdown h3:hover {
+     background-color: #ddd;
+}
+
+.show {
+     display: block;
+}
 
 
-   
+
 
 
 
@@ -498,11 +526,11 @@ header {
      height: 300px;
 }
 
-.portfolioTh{
+.portfolioTh {
      padding: 5px;
 }
 
-.portfolioAssetsTable td{
+.portfolioAssetsTable td {
      padding: 5px;
 }
 
@@ -515,17 +543,17 @@ header {
 }
 
 
-.noAssetsMsg{
+.noAssetsMsg {
      color: white;
      font-size: 30px;
 }
 
-.visible{
+.visible {
      display: none;
 }
 
 
-.portfolioBalance{
+.portfolioBalance {
      color: white;
      font-size: 24px;
 }
@@ -533,8 +561,10 @@ header {
 
 /* Chart container */
 
-
-div.apexcharts-legend-series span.apexcharts-legend-text{
-     color: white;
+#chart {
+     padding: 0;
 }
 
+div.apexcharts-legend-series span.apexcharts-legend-text {
+     color: white;
+}

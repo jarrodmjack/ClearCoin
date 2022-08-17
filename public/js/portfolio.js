@@ -26,8 +26,18 @@ const numberInput = document.querySelector('#numberInput');
 const submitModalBtn = document.querySelector('#submitModalBtn');
 const tdCurrencyQty = document.querySelector('.currencyQuantity')
 
+// blurring background while modal is active
+const header = document.querySelector('#headerContainer')
+const drpdown = document.querySelector('#dropContainer')
+const portfolioItems = document.querySelector('#portfolioItems')
+
 
 function my_prompt() {
+
+    header.classList.add('isBlurred')
+    drpdown.classList.add('isBlurred')
+    portfolioItems.classList.add('isBlurred')
+
     return new Promise((resolve, reject) => {
       modal.style.display = "block";
       const cleanup = () => {
@@ -37,6 +47,9 @@ function my_prompt() {
       };
 
       const onSubmit = () => {
+        header.classList.remove('isBlurred')
+        drpdown.classList.remove('isBlurred')
+        portfolioItems.classList.remove('isBlurred')
         cleanup();
         if(!numberInput.value){
           resolve(0)
@@ -45,6 +58,9 @@ function my_prompt() {
       };
 
       const onClose = () => {
+        drpdown.classList.remove('isBlurred')
+        portfolioItems.classList.remove('isBlurred')
+        header.classList.remove('isBlurred')
         cleanup();
         resolve(null);
       };
