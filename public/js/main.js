@@ -175,7 +175,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
     }
 
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 50; i++) {
 
 
       // table row creation and append to table body

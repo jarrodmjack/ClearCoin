@@ -113,16 +113,15 @@ async function addCoinToPortfolio(e) {
 // Get all data from localstorage
 function allStorage() {
     let array = [];
-    if(localStorage.length > 0){
-        for (let i = 0; i < localStorage.length; i++) {
-            array.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-        }
-        return array
-    }else{
+    if(!localStorage.length || localStorage.length === 0){
         const noAssets = document.querySelector('.noAssetsMsg')
         noAssets.classList.remove('visible')
+    }else{
+      for (let i = 0; i < localStorage.length; i++) {
+        array.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
     }
-
+  }
+  return array
 }
 
 
@@ -147,8 +146,10 @@ displayPortfolioCoins()
 async function generatePortfolioTableData(){
 
   try{
-    const tableData = allStorage()
-    const tbody = document.querySelector('.portfolioAssetsTableBody')
+    const tableData = allStorage() //getting table data
+
+    if(tableData.length > 0){
+      const tbody = document.querySelector('.portfolioAssetsTableBody')
     for(let i = 0; i < tableData.length; i++){
         let portfolioAssetSymb = document.createElement('td')
         let portfolioAssetName = document.createElement('td')
@@ -183,6 +184,9 @@ async function generatePortfolioTableData(){
         tr.appendChild(portfolioAssetDelete)
         tbody.appendChild(tr)
     }
+    }else{
+      console.log('table is empty')
+    }
   } catch (err){
     console.error(err)
   }
@@ -215,17 +219,6 @@ async function currencyToAddTo() {
     window.location.reload()
     // set item's qty to add value qty
 }
-  //   const add_value = await my_prompt();
-  //   if (add_value === null) {
-  //     return;
-  //   }
-
-  //   globalCounter += add_value;
-
-  //   // instead of printing to a span, I want to update the qty content of the object from localstorage
-  //   counter_span.textContent = globalCounter.toString();
-  // };
-
 
 
 
@@ -247,28 +240,19 @@ async function currencyToAddTo() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 // Get sum to display in a chart
 function getPortfolioSum(){
     let data = allStorage()
     let sum = 0;
-    // console.log(data)
-    
-        for(let i = 0; i < data.length; i++){
-            sum += data[i].currentprice * data[i].amount
-        }
-        let balance = document.querySelector('.portfolioBalance')
-        balance.innerText = `Current Balance: $${sum.toFixed(2)} CAD`
-        return sum.toFixed(2)
+
+    if(data && data.length > 0){
+      for(let i = 0; i < data.length; i++){
+        sum += data[i].currentprice * data[i].amount
+      }
+    let balance = document.querySelector('.portfolioBalance')
+    balance.innerText = `Current Balance: $${sum.toFixed(2)} CAD`
+    }
+    return sum.toFixed(2)
  }
  getPortfolioSum()
 
@@ -282,14 +266,15 @@ function getPortfolioSum(){
 
 document.querySelector('#dropdownBtn').addEventListener('click', enableDropDown)
 
-document.querySelector('#myInput').addEventListener('keypress', filterFunction)
+document.querySelector('#myInput').addEventListener('keypress', filterDropdownMenuItems)
 
 
 function enableDropDown() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function filterFunction() {
+// FILTER FOR DROPDOWN MENU
+function filterDropdownMenuItems() {
   let input, filter, ul, li, a, i;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
