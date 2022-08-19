@@ -1,3 +1,7 @@
+<img src='https://phantom-marca.unidadeditorial.es/d6811174d250534bc39d0fd0920eec14/crop/0x0/887x499/resize/1320/f/jpg/assets/multimedia/imagenes/2022/03/10/16469298673188.png'></img>
+
+
+
 # Introduction
 
 ClearCoin is a full stack cryptocurrency price tracking application intended for users that are new to the crypto space.
