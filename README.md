@@ -1,6 +1,6 @@
 # Introduction
 
-A full stack cryptocurrency price tracking application built 
+ClearCoin is a full stack cryptocurrency price tracking application intended for users that are new to the crypto space.
 
 ---
 
