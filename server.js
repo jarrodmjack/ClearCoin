@@ -4,7 +4,10 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = process.env.port || 3450
 const axios = require("axios");
+const newsRoute = require('./routes/news')
 require('dotenv').config()
+
+
 
 
 
@@ -26,6 +29,8 @@ app.use(express.static('public')) // serve all files in public folder
 app.use(express.urlencoded({ extended: true })) // middleware for parsing bodies from URL
 app.use(express.json()) // It parses incoming JSON requests and puts the parsed data in req
 
+// Initialize routes
+app.use('/news', newsRoute)
 
 
 
@@ -50,28 +55,28 @@ app.get('/getCurrentCoins', async(req, res) => {
 })
 
 
-app.get('/news', async(req, res) => {
-    let news;
-    const options = {
-        method: 'GET',
-        url: `https://bing-news-search1.p.rapidapi.com/news/search`,
-        params: { q: `cryptocurrency`, freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off' },
-        headers: {
-            'X-BingApis-SDK': 'true',
-            'X-RapidAPI-Key': 'db3e8ae18bmshd7bb610557d438fp1e9721jsneadf0cccb21c',
-            'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
-        }
-    };
+// app.get('/news', async(req, res) => {
+//     let news;
+//     const options = {
+//         method: 'GET',
+//         url: `https://bing-news-search1.p.rapidapi.com/news/search`,
+//         params: { q: `cryptocurrency`, freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off' },
+//         headers: {
+//             'X-BingApis-SDK': 'true',
+//             'X-RapidAPI-Key': 'db3e8ae18bmshd7bb610557d438fp1e9721jsneadf0cccb21c',
+//             'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+//         }
+//     };
       
-      axios.request(options).then(function (response) {
-        console.log(response.data)
-        // console.log(news)
-      }).catch(function (error) {
-          console.error(error);
-      });
-    // res.render('news.ejs', { newsData: news })
-    // console.log(news)
-})
+//       axios.request(options).then(function (response) {
+//         console.log(response.data)
+//         // console.log(news)
+//       }).catch(function (error) {
+//           console.error(error);
+//       });
+//     // res.render('news.ejs', { newsData: news })
+//     // console.log(news)
+// })
 
 
 

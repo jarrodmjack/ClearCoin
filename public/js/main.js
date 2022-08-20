@@ -1,73 +1,50 @@
 console.log('main.js loaded ')
-// let tbody = document.querySelector('#cryptocurrencies')
-
-
-// fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
-// .then(res => res.json()) 
-// .then(data => { 
 
 
 
 
-//   console.log(data)
-//   console.log(data.coingecko_rank)
-//   console.log(data.name)
-//   console.log(data.symbol)
-//   console.log(data.market_data.current_price.cad)
-//   console.log(data.market_data.market_cap.cad)
-//   console.log(data.market_data.circulating_supply)
-//   console.log(data.market_data.total_volume.cad)
-//   console.log(data.market_data.price_change_percentage_1h_in_currency.cad)
-//   console.log(data.market_data.price_change_percentage_24h_in_currency.cad)
 
+// Fetching total marketcap in CAD and percentage change in marketcap over the last 24 hours
+async function setGlobalCurrencyData(){
 
-//   document.querySelector('#btcRank').innerText = data.coingecko_rank
-//   document.querySelector('#btcName').innerText = data.name
-//   document.querySelector('#btcSymbol').innerText = data.symbol
-//   document.querySelector('#btcPrice').innerText = data.market_data.current_price.cad
-//   document.querySelector('#btcMarketCap').innerText = data.market_data.market_cap.cad
-//   document.querySelector('#btcCircSupply').innerText = data.market_data.circulating_supply
-//   document.querySelector('#btcVolume').innerText = data.market_data.total_volume.cad
-//   document.querySelector('#btcPercentageChange1Hour').innerText = data.market_data.price_change_percentage_1h_in_currency.cad.toFixed(2)
-//   document.querySelector('#btcPercentageChange24Hour').innerText = data.market_data.price_change_percentage_24h_in_currency.cad.toFixed(2)
+  let totalMarketCapElement = document.querySelector('#globalMarketCap')
+  let percentageTextElement = document.querySelector('#globalPercChange24Hr')
 
+  const response = await fetch('https://api.coingecko.com/api/v3/global')
+  const data = await response.json()
 
-//   for(let i = 1; i < 10; i++){
-//     const tr = document.createElement('tr')
-//     for(let j = 1; j < 10; j++){
-//       const td = document.createElement('td')
-//       tr.appendChild(td)
-//     }
-//     tbody.appendChild(tr)
-//   }
+  const totalMCap = data.data.total_market_cap.cad.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
 
+  const totalPercChange = data.data.market_cap_change_percentage_24h_usd.toFixed(2)
 
-// })
-// .catch(err => {
-//     console.log(`error ${err}`)
-// });
+  totalMarketCapElement.innerText = `$${totalMCap}CAD`
+  percentageTextElement.innerText = `${[totalPercChange]}%`
 
+  if(totalPercChange < 0){
+    percentageTextElement.style.color = "red"
+    document.querySelector('#incOrDec').innerText = `decrease`
+  }else{
+    percentageTextElement.style.color = "green"
+    document.querySelector('#incOrDec').innerText = `increase`
+  }
 
+  const currentdate = new Date(); 
 
-// class Currency{
-//   constructor(rank, name, symbol, priceCad, mCap, circ, vol, OneHrPerc, twoFourPerc){
-//     this.rank = rank
-//     this.name = name
-//     this.symbol = symbol 
-//     this.priceCad = priceCad
-//     this.mCap = mCap 
-//     this.circ = circ 
-//     this.vol = vol
-//     this.OneHrPerc = OneHrPerc
-//     this.twoFourPerc = twoFourPerc
-//   }
-// }
+  const time = `${currentdate.getMonth()}/${currentdate.getDate()}/${currentdate.getFullYear()} @ ${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`
 
-// const btc = new Currency()
+  document.querySelector('#globalDataUpdateTime').innerText = `Updated at ${time}`
 
 
 
 
+
+
+
+}
+setGlobalCurrencyData()
 
 
 
@@ -77,13 +54,9 @@ console.log('main.js loaded ')
 
 
 // Market data rather than individual coin data to display in table
-
-
 // global vars to store a couple elements I needed
 let tbody = document.querySelector('#cryptocurrencies')
 let newRow = document.querySelector('tr')
-
-
 
 
 // Price sort array
@@ -131,8 +104,8 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
   .then(res => res.json())
   .then(data => {
     // logging to test which data I am receiving
-    console.log(data)
-    console.log(data[0].image)
+    // console.log(data)
+    // console.log(data[0].image)
     // console.log(data[0].name)
     // console.log(data[0].current_price)
     // console.log(data[0].market_cap)
@@ -167,11 +140,11 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
       coinArray.push(coin) //pushing currency objects to an array
     }
 
-    console.log(priceArray)
+    // console.log(priceArray)
 
 
     for (const e of coinArray) {
-      console.log(e.name)
+      // console.log(e.name)
     }
 
 
@@ -230,10 +203,10 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
 
     }
 
-    console.log(coinArray) //class constructor
+    // console.log(coinArray) //class constructor
   })
   .catch(err => {
-    console.log(`error ${err}`)
+    console.error(err)
   });
   
 // TRENDING **********
@@ -268,28 +241,6 @@ fetch("https://api.coingecko.com/api/v3/search/trending")
   .catch(err => {
     console.log(`error ${err}`)
   });
-
-
-
-// TRUSTED EXCHANGES***********
-fetch("https://api.coingecko.com/api/v3/global")
-  .then(res => res.json())
-  .then(data => {
-    // console.log(data)
-    console.log(data.data.active_cryptocurrencies)
-
-    document.querySelector('#activeCurrencyCount').innerText = data.data.active_cryptocurrencies
-
-
-  })
-  .catch(err => {
-    console.log(`error ${err}`)
-  });
-
-
-
-
-
 
 
 
@@ -342,11 +293,11 @@ async function addCoinsToDb(){  // function to mark item as complete
           })
         })
       const data = await response.json() // gets response from server as json
-      console.log(data)  // logs data to console
+      // console.log(data)  // logs data to console
       location.reload()  
 
   }catch(err){ // catch error
-      console.log(err)
+      console.error(err)
   }
 }
 

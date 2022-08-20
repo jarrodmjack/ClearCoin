@@ -63,34 +63,81 @@ span {
 
 /* Triple section (trending, top movers, tbd) */
 
+.tripleSectionAndGlobalCurrencyData{
+     /* border: 1px solid red; */
+     padding: 2rem 0;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 30px;
+}
+
+#globalDataUpdateTime{
+     text-indent: 10px;
+     color: #767474;
+}
+
+.tripleWrapper{
+     /* border: 2px solid rgb(45, 193, 45); */
+}
+
+.globalCurrencyDataContainer{
+     /* border: 1px solid cyan; */
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     align-items: flex-start;
+}
+
+.globalCurrencyDataContainer h2{
+     font-size: 30px;
+}
+
+.globalCurrencyDataContainer p{
+     color: white;
+     font-size: 18px;
+}
 
 
 .tripleWrapper {
-     padding-top: 10rem;
+     /* padding-top: 10rem; */
      display: flex;
      justify-content: center;
      gap: 5rem;
-     margin-bottom: 10rem;
+     margin-bottom: 2rem;
 }
 
 h2.trendingTitle,
 h2.trustedTitle {
-     font-size: 2rem;
+     font-size: 1rem;
      text-align: center;
      color: rgb(9, 254, 99);
-
 }
 
+/* .trustedHeading,
+.trendingHeading{
+     font-size: 14px;
+} */
+
+
 .tripleContainers {
-     height: 250px;
-     width: 400px;
+     height: 175px;
+     width: 350px;
      padding: 2rem;
      border: 10px solid rgb(10, 19, 21);
      outline: 1px solid rgb(95, 160, 160);
      border-radius: 10px;
-     gap: 30px;
+     gap: 15px;
      display: flex;
      flex-direction: column;
+     font-size: 14px;
+}
+
+div.tripleContainers .trendingContainer,
+div.tripleContainers .trustedContainer{
+     font-size: 14px;
 }
 
 .trendingContainer,
@@ -201,8 +248,14 @@ td {
 
 }
 
-tr:hover {
-     background-color: rgb(77, 80, 101);
+tbody tr:nth-child(odd){
+     background-color: #272938;
+     color: #fff;
+   }
+
+tr:hover,
+tbody tr:nth-child(odd):hover {
+     background-color: rgb(34, 53, 58);
      color: white;
 }
 
@@ -212,7 +265,7 @@ tr:hover {
 }
 
 .tableContainer {
-     padding-top: 10rem;
+     padding-top: 5rem;
      /* height: 1000px; */
 }
 
@@ -252,15 +305,16 @@ header {
 
 .signInBtn {
      margin-right: 5rem;
-     border: 3px solid white;
-     padding: 1.25rem 2rem 1.25rem 2rem;
+     /* border: 3px solid white; */
+     padding: 1rem;
      display: block;
      border-radius: 12px;
 }
 
 .signInBtn:hover {
-     color: black;
-     background-color: white;
+     /* color: black; */
+     text-decoration: underline;
+     /* background-color: white; */
      /* border-color: rgb(10, 102, 251); */
 }
 

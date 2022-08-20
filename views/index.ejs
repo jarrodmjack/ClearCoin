@@ -34,35 +34,45 @@
 	</header>
 
 
+
+	<section class="tripleSectionAndGlobalCurrencyData">
+	<div class="globalCurrencyDataContainer">
+		<h2>Today's Cryptocurrency Market Cap</h2>
+		<p>The global crypto market cap is <span id="globalMarketCap"></span>, which is a <span id="globalPercChange24Hr"></span> <span id="incOrDec"></span> over the last 24 hours.</p>
+		<span id="globalDataUpdateTime">Updated at 11:07:46</span> 
+	  </div>
+
 	<!-- Triple section above price table -->
 	<section class="tripleWrapper">
 
+
+		
 		<!-- Trending -->
 		<div class="tripleContainers">
 			<h2 class="trendingTitle">Trending Currencies</h2>
 			<div class="trendingContainer trendingOneContainer">
 				<span>1</span>
 				<img id="trendingIconOne" src="" alt="">
-				<span id="trendingNameOne"></span>
+				<span class="trendingHeading" id="trendingNameOne"></span>
 				<span id="trendingSymbolOne"></span>
 			</div>
 			<div class="trendingContainer trendingTwoContainer">
 				<span>2</span>
 				<img id="trendingIconTwo" src="" alt="">
-				<span id="trendingNameTwo"></span>
+				<span class="trendingHeading" id="trendingNameTwo"></span>
 				<span id="trendingSymbolTwo"></span>
 			</div>
 			<div class="trendingContainer trendingThreeContainer"><span>3</span>
 				<img id="trendingIconThree" src="" alt="">
-				<span id="trendingNameThree"></span>
+				<span class="trendingHeading" id="trendingNameThree"></span>
 				<span id="trendingSymbolThree"></span>
 			</div>
 		</div>
 
 		<!-- Top Movers -->
-		<div class="tripleContainers topMoversContainer">
+		<!-- <div class="tripleContainers topMoversContainer">
 			<h2>Top Movers</h2>
-		</div>
+		</div> -->
 
 		<!-- Trusted Exchanges -->
 		<div class="tripleContainers">
@@ -70,32 +80,33 @@
 			<div class="trustedContainer trustedOneContainer">
 				<span>1</span>
 				<img id="trustedIconOne" src="" alt="">
-				<span id="trustedNameOne"></span>
+				<span class="trustedHeading" id="trustedNameOne"></span>
 				<span id="trustedSymbolOne"></span>
 			</div>
 			<div class="trustedContainer trustedOneContainer">
 				<span>2</span>
 				<img id="trustedIconTwo" src="" alt="">
-				<span id="trustedNameTwo"></span>
+				<span class="trustedHeading" id="trustedNameTwo"></span>
 				<span id="trustedSymbolTwo"></span>
 			</div>
 			<div class="trustedContainer trustedOneContainer">
 				<span>3</span>
 				<img id="trustedIconThree" src="" alt="">
-				<span id="trustedNameThree"></span>
+				<span class="trustedHeading" id="trustedNameThree"></span>
 				<span id="trustedSymbolThree"></span>
 			</div>
 
 		</div>
 	</section>
-
-	<section class="activeCurrenciesContainer">
+</section>
+	<!-- <section class="activeCurrenciesContainer">
 		<h3 class="activeCurrencies">Current Active Currencies:</h3>
 		<span id="activeCurrencyCount" class="activeCurrencies"></span>
-	</section>
+	</section> -->
 
 
 	<section class="tableContainer">
+		<h4 id="sortBy">Click a heading to sort by a specific value</h4>
 		<table class="myTable table is-narrow is-hoverable table table-sortable" id="leaderboard">
 			<thead>
 				<tr class="tableHeading">
