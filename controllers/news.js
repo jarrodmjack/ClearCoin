@@ -1,5 +1,5 @@
-// const Todo = require('../models/Todo')
 
+// news controller
 module.exports = {
     getNews: async(req, res) => {
         try{
