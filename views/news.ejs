@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
-	
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Document</title>
 </head>
+
 <body>
     <header>
 
-		<div class="headerItemContainer">
-			<a href="#">
-				<h1>ClearCoin</h1>
-			</a>
-			<div class="nav-button-container">
-				<a href="/" class="signInBtn">Home</a>
-				<a href="/portfolio" class="signInBtn">Portfolio</a>
-				<a href="#" class="signInBtn">Sign In</a>
-			</div>
-		</div>
-	</header>
+        <div class="headerItemContainer">
+            <a href="#">
+                <h1>ClearCoin</h1>
+            </a>
+            <div class="nav-button-container">
+                <a href="/" class="signInBtn">Home</a>
+                <a href="/portfolio" class="signInBtn">Portfolio</a>
+                <a href="#" class="signInBtn">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="newsIntro">
+        <h2 id="newsIntroHeading">Here is the latest in Cryptocurrency news</h2>
+    </section>
 
     <div class="newsContainer">
-        <div class="newsSquare">
-            <h3 class="newsHeading">Test</h3>
-            <img src="" alt="newsImg">
-        </div>
+        <% for(let i=0; i < news.length; i++) { %>
+            <a class="newsUrl" href="<%= news[i].url %>">
+            <div class="newsSquare">
+                    <img class="newsThumbImg" src="<%= news[i].image.thumbnail.contentUrl ? news[i].image.thumbnail.contentUrl : 'https://www.eff.org/files/images_insert/bitcoin-square-265_0.jpg' %>" alt="newsimg">
+                    <div class="newsTextContentContainer">
+                        <span id="newsProvider">
+                            <%= news[i].provider[0].name %>
+                        </span>
+                        <h3 class="newsHeading">
+                            <%= news[i].name %>
+                        </h3>
+                        <p class="newsDescription">
+                            <%= news[i].description %>
+                        </p>
+                    </div>
+            </div>
+        </a>
+
+            <% } %>
     </div>
 
 
 
 </body>
 <script src="js/news.js"></script>
+
 </html>

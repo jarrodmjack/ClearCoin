@@ -149,6 +149,7 @@ async function generatePortfolioTableData(){
     const tableData = allStorage() //getting table data
 
     if(tableData.length > 0){
+      document.querySelector('#chart').style.display = 'block'
       const tbody = document.querySelector('.portfolioAssetsTableBody')
     for(let i = 0; i < tableData.length; i++){
         let portfolioAssetSymb = document.createElement('td')
@@ -186,6 +187,7 @@ async function generatePortfolioTableData(){
     }
     }else{
       console.log('table is empty')
+      document.querySelector('#chart').style.display = 'none'
     }
   } catch (err){
     console.error(err)

@@ -626,3 +626,73 @@ header {
 div.apexcharts-legend-series span.apexcharts-legend-text {
      color: white;
 }
+
+
+
+
+/*  NEWS STYLING */
+
+
+.newsIntro{
+     text-align: center;
+     padding: 5rem 8rem;
+}
+
+#newsIntroHeading{
+     font-size: 30px;
+     font-weight: bold;
+     color: rgb(70, 221, 244);
+}
+
+
+
+.newsContainer{
+     display: flex;
+     flex-direction: column;
+     gap: 50px;
+}
+
+.newsSquare{
+     /* border: 1px solid red; */
+     display: flex;
+     gap: 25px;
+     /* width: 800px; */
+     align-items: center;
+     width: 900px;
+     margin: 0 auto;
+}
+
+.newsSquare:hover{
+     opacity: .7;
+}
+
+.newsThumbImg{
+     width: 125px;
+     height: 125px;
+}
+
+.newsTextContentContainer{
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+}
+
+.newsUrl{
+     width: 100%;
+}
+
+.newsHeading{
+     font-size: 28px;
+     font-weight: bold;
+}
+
+.newsDescription{
+     font-size: 20px;
+}
+
+
+
+#newsProvider{
+     color: rgb(192, 189, 189);
+     font-size: 14px;
+}
