@@ -22,7 +22,10 @@
 
 
 
-	
+	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe
+			src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
+			width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+			style="border:0;margin:0;padding:0;"></iframe></div>
 
 	<header id="headerContainer">
 		<div class="headerItemContainer">
@@ -49,30 +52,38 @@
 			</ul>
 		</div> -->
 
-
-		<div id="dropContainer" class="dropdown">
+		<div class="dropDownAndConverterContainer">
 			<h3 class="dropdownHeading">Add a currency to your portfolio</h3>
-			<button id="dropdownBtn" class="dropbtn">Currencies</button>
-			<div id="myDropdown" class="dropdown-content">
-				<input type="text" placeholder="Search.." id="myInput">
+			<div id="dropContainer" class="dropdown">
+				<button id="dropdownBtn" class="dropbtn">Currencies</button>
+				<div id="myDropdown" class="dropdown-content">
+					<input type="text" placeholder="Search.." id="myInput">
 
-				<% if (coins.length> 0){ %>
-					<% for(let i=0; i < coins.length; i++) {%>
-						<h3 class="listItems">
-							<%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %>
-						</h3>
-						<% } %>
-							<% } else {%>
-								<a href="" class="listItem">Data Not available</a>
-								<% } %>
+					<% if (coins.length> 0){ %>
+						<% for(let i=0; i < coins.length; i++) {%>
+							<h3 class="listItems">
+								<%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %>
+							</h3>
+							<% } %>
+								<% } else {%>
+									<a href="" class="listItem">Data Not available</a>
+									<% } %>
+				</div>
 			</div>
-			
+
+			<!-- Crypto Converter ⚡ Widget -->
+			<!-- <crypto-converter-widget id="cryptoConverterWidget" shadow symbol live background-color="#2A2E45" border-radius="0.27rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2"></crypto-converter-widget><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script> -->
+			<!-- /Crypto Converter ⚡ Widget -->
+
+
+
 		</div>
+
 		<div class="isNotBlurred addQtyModal">
 			<div class="modalItemContainer">
 				<div class="modalCloseBtnContainer">
-				<button id="closeModalBtn">X</button>
-			</div>
+					<button id="closeModalBtn">X</button>
+				</div>
 				<h2>Please enter Quantity</h2>
 				<div class="addQtyModalInputContainer">
 					<input id="numberInput" type="number" placeholder="0">
@@ -91,17 +102,19 @@
 	</datalist>
 -->
 
-		<div id="portfolioItems" onclick="" class="personalItemsContainer">
-			<div id="chart">
 
-			</div>
+
+
+
+		<div id="portfolioItems" onclick="" class="personalItemsContainer">
+
 
 			<div class="portfolioCoinContainer">
 				<!-- <input id="coinSearch" type="search">
 			<input id="testBtn" type="submit"> -->
 				<!-- <div class="portfolioCoinList">
 			</div> -->
-				
+
 
 				<div class="portfolioTableContainer">
 					<h3 class="noAssetsMsg visible">No current assets</h3>
@@ -126,8 +139,12 @@
 			</div>
 		</div>
 
+		<div class="chartContainer">
+			<h3 id="chartHeading">Your portfolio currency weights</h3>
+			<div id="chart">
 
-
+			</div>
+		</div>
 
 
 
@@ -160,6 +177,7 @@
 
 
 	<!-- <script src="/js/portfolio.js"></script> -->
+	<script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
 	<script type="module" src="/js/portfolio.js"></script>
 	<script src="js/tablesort.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

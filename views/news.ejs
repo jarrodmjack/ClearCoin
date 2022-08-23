@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div>
     <header>
 
         <div class="headerItemContainer">
@@ -32,7 +33,7 @@
 
     <div class="newsContainer">
         <% for(let i=0; i < news.length; i++) { %>
-            <a class="newsUrl" href="<%= news[i].url %>">
+            <a class="newsUrl" target="_blank" href="<%= news[i].url %>">
             <div class="newsSquare">
                     <img class="newsThumbImg" src="<%= news[i].image.thumbnail.contentUrl ? news[i].image.thumbnail.contentUrl : 'https://www.eff.org/files/images_insert/bitcoin-square-265_0.jpg' %>" alt="newsimg">
                     <div class="newsTextContentContainer">

@@ -178,9 +178,14 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
         td2.classList.add('priceSort')
         priceArray.push(td2)
       } else {
-        td2.innerText = `$${data[i].current_price.toFixed(2)}`
+        if(data[i].current_price < 1){
+          td2.innerText = `$${data[i].current_price.toFixed(6)}`
+        }else{
+          td2.innerText = `$${data[i].current_price.toFixed(2)}`
         td2.classList.add('priceSort')
         priceArray.push(td2)
+        }
+        
       }
       const td3 = document.createElement('td')
       tr.appendChild(td3)

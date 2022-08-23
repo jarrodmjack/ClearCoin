@@ -21,7 +21,7 @@ module.exports = {
               axios.request(options).then(function (response) {
                 // console.log(response.data.value)
                 let newsArray = response.data.value
-                console.log(newsArray)
+                // console.log(newsArray)
                 res.render('news.ejs', {news: newsArray})
               }).catch(function (error) {
                   console.error(error);

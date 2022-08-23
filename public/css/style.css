@@ -25,6 +25,8 @@ html {
 /* BASE STYLES
 /*******************************************/
 
+
+
 body {
      font-family: 'Roboto', sans-serif;
      /* background-color: rgba(18,18,18,255); */
@@ -60,6 +62,32 @@ h2 {
 span {
      color: white;
 }
+
+/* SCROLLBAR */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+     scrollbar-width: auto;
+     scrollbar-color: #121212 #4a495f;
+   }
+ 
+   /* Chrome, Edge, and Safari */
+   *::-webkit-scrollbar {
+     width: 16px;
+   }
+ 
+   *::-webkit-scrollbar-track {
+     background: #4a495f;
+   }
+ 
+   *::-webkit-scrollbar-thumb {
+     background-color: #121212;
+     border-radius: 10px;
+     border: 3px solid #000000;
+   }
+
+
 
 /* Triple section (trending, top movers, tbd) */
 
@@ -359,6 +387,7 @@ header {
 
 
 .portfolioContentContainer {
+     padding: 10rem 1rem;
      display: flex;
      justify-content: space-around;
 }
@@ -492,9 +521,15 @@ header {
      color: white;
      font-size: 20px;
 }
+.dropDownAndConverterContainer{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 15px;
+}
 
 .dropbtn {
-     background-color: #2285a3;
+     background-color: #3648d6;
      color: white;
      padding: 16px;
      font-size: 16px;
@@ -518,11 +553,15 @@ header {
      font-size: 16px;
      padding: 14px 20px 12px 45px;
      border: none;
-     border-bottom: 1px solid #ddd;
+     /* border-bottom: 1px solid #ddd; */
+     outline: none;
+     width: 100%;
+     background-color: rgb(48, 58, 70);
+     color: white;
 }
 
 #myInput:focus {
-     outline: 3px solid #ddd;
+     /* outline: 3px solid #ddd; */
 }
 
 .dropdown {
@@ -536,10 +575,11 @@ header {
 .dropdown-content {
      display: none;
      position: absolute;
-     background-color: #f6f6f6;
+     background-color: #26303b;
+     color: white;
      min-width: 230px;
      overflow: auto;
-     border: 1px solid #ddd;
+     /* border: 1px solid #ddd; */
      z-index: 1;
 }
 
@@ -555,13 +595,16 @@ header {
      background-color: #ddd;
 }
 
+h3.listItems{
+     color: white;
+}
 .show {
      display: block;
 }
 
 
 
-
+/* portfolio general styles */
 
 
 /* Personal assets table */
@@ -578,6 +621,11 @@ header {
      border: 1px solid gray;
 }
 
+.portfolioItems{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
 
 .portfolioAssetsTable {
      width: 500px;
@@ -596,7 +644,7 @@ header {
      padding-top: 12px;
      padding-bottom: 12px;
      text-align: left;
-     background-color: #04AA6D;
+     background-color: #4f648d;
      color: white;
 }
 
@@ -617,17 +665,33 @@ header {
 }
 
 
+
 /* Chart container */
+
+
 
 #chart {
      padding: 0;
 }
 
-div.apexcharts-legend-series span.apexcharts-legend-text {
-     color: white;
+
+
+span.apexcharts-legend-text{
+     color: white !important;
 }
 
+.chartContainer{
+     /* border: 1px solid red; */
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+}
 
+#chartHeading{
+     /* text-align: center; */
+     font-size: 20px;
+     color: #a5adb8;
+}
 
 
 /*  NEWS STYLING */
@@ -695,4 +759,17 @@ div.apexcharts-legend-series span.apexcharts-legend-text {
 #newsProvider{
      color: rgb(192, 189, 189);
      font-size: 14px;
+}
+
+
+/* CRYPTO CONVERTER WIDGET */
+
+#cryptoConverterWidget{
+     width: 300px !important;
+     /* height: px !important; */
+}
+
+.converterContainer{
+     justify-content: center;
+     align-items: center;
 }
