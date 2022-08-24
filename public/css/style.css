@@ -33,7 +33,10 @@ body {
 
      background: rgb(34, 36, 48);
      background: linear-gradient(180deg, rgba(34, 36, 48, 1) 0%, rgba(23, 23, 26, 1) 100%);
-
+     height: 100%;
+     margin: 0;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
 }
 
 a {
@@ -66,32 +69,32 @@ span {
 /* SCROLLBAR */
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
+/* Firefox */
+* {
      scrollbar-width: auto;
      scrollbar-color: #121212 #4a495f;
-   }
- 
-   /* Chrome, Edge, and Safari */
-   *::-webkit-scrollbar {
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
      width: 16px;
-   }
- 
-   *::-webkit-scrollbar-track {
+}
+
+*::-webkit-scrollbar-track {
      background: #4a495f;
-   }
- 
-   *::-webkit-scrollbar-thumb {
+}
+
+*::-webkit-scrollbar-thumb {
      background-color: #121212;
      border-radius: 10px;
      border: 3px solid #000000;
-   }
+}
 
 
 
 /* Triple section (trending, top movers, tbd) */
 
-.tripleSectionAndGlobalCurrencyData{
+.tripleSectionAndGlobalCurrencyData {
      /* border: 1px solid red; */
      padding: 2rem 0;
      display: flex;
@@ -101,16 +104,16 @@ span {
      gap: 30px;
 }
 
-#globalDataUpdateTime{
+#globalDataUpdateTime {
      text-indent: 10px;
      color: #767474;
 }
 
-.tripleWrapper{
+.tripleWrapper {
      /* border: 2px solid rgb(45, 193, 45); */
 }
 
-.globalCurrencyDataContainer{
+.globalCurrencyDataContainer {
      /* border: 1px solid cyan; */
      text-align: center;
      display: flex;
@@ -119,11 +122,11 @@ span {
      align-items: flex-start;
 }
 
-.globalCurrencyDataContainer h2{
+.globalCurrencyDataContainer h2 {
      font-size: 30px;
 }
 
-.globalCurrencyDataContainer p{
+.globalCurrencyDataContainer p {
      color: white;
      font-size: 18px;
 }
@@ -164,7 +167,7 @@ h2.trustedTitle {
 }
 
 div.tripleContainers .trendingContainer,
-div.tripleContainers .trustedContainer{
+div.tripleContainers .trustedContainer {
      font-size: 14px;
 }
 
@@ -276,10 +279,10 @@ td {
 
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
      background-color: #272938;
      color: #fff;
-   }
+}
 
 tr:hover,
 tbody tr:nth-child(odd):hover {
@@ -362,7 +365,7 @@ header {
 /* PORTFOLIO */
 /* ************************************************* */
 
-.modalCover{
+.modalCover {
      width: 100vw;
      height: 100vh;
      background-color: black;
@@ -507,12 +510,12 @@ header {
      filter: blur(2px);
      -webkit-filter: blur(2px);
      transition: .3s ease-in-out;
-   }
+}
 
-   .isNotBlurred{
+.isNotBlurred {
      filter: none;
      -webkit-filter: none;
-   }
+}
 
 
 /* dropdown search menu */
@@ -521,7 +524,8 @@ header {
      color: white;
      font-size: 20px;
 }
-.dropDownAndConverterContainer{
+
+.dropDownAndConverterContainer {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -595,9 +599,10 @@ header {
      background-color: #ddd;
 }
 
-h3.listItems{
+h3.listItems {
      color: white;
 }
+
 .show {
      display: block;
 }
@@ -621,7 +626,7 @@ h3.listItems{
      border: 1px solid gray;
 }
 
-.portfolioItems{
+.portfolioItems {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -676,18 +681,18 @@ h3.listItems{
 
 
 
-span.apexcharts-legend-text{
+span.apexcharts-legend-text {
      color: white !important;
 }
 
-.chartContainer{
+.chartContainer {
      /* border: 1px solid red; */
      display: flex;
      flex-direction: column;
      gap: 20px;
 }
 
-#chartHeading{
+#chartHeading {
      /* text-align: center; */
      font-size: 20px;
      color: #a5adb8;
@@ -697,12 +702,12 @@ span.apexcharts-legend-text{
 /*  NEWS STYLING */
 
 
-.newsIntro{
+.newsIntro {
      text-align: center;
      padding: 5rem 8rem;
 }
 
-#newsIntroHeading{
+#newsIntroHeading {
      font-size: 30px;
      font-weight: bold;
      color: rgb(70, 221, 244);
@@ -710,13 +715,13 @@ span.apexcharts-legend-text{
 
 
 
-.newsContainer{
+.newsContainer {
      display: flex;
      flex-direction: column;
      gap: 50px;
 }
 
-.newsSquare{
+.newsSquare {
      /* border: 1px solid red; */
      display: flex;
      gap: 25px;
@@ -726,37 +731,37 @@ span.apexcharts-legend-text{
      margin: 0 auto;
 }
 
-.newsSquare:hover{
+.newsSquare:hover {
      opacity: .7;
 }
 
-.newsThumbImg{
+.newsThumbImg {
      width: 125px;
      height: 125px;
 }
 
-.newsTextContentContainer{
+.newsTextContentContainer {
      display: flex;
      flex-direction: column;
      gap: 20px;
 }
 
-.newsUrl{
+.newsUrl {
      width: 100%;
 }
 
-.newsHeading{
+.newsHeading {
      font-size: 28px;
      font-weight: bold;
 }
 
-.newsDescription{
+.newsDescription {
      font-size: 20px;
 }
 
 
 
-#newsProvider{
+#newsProvider {
      color: rgb(192, 189, 189);
      font-size: 14px;
 }
@@ -764,12 +769,64 @@ span.apexcharts-legend-text{
 
 /* CRYPTO CONVERTER WIDGET */
 
-#cryptoConverterWidget{
+#cryptoConverterWidget {
      width: 300px !important;
      /* height: px !important; */
 }
 
-.converterContainer{
+.converterContainer {
      justify-content: center;
      align-items: center;
 }
+
+
+.aboutContainer{
+     /* height: 100vh;
+    width: 100%;
+    background-image: url('/assets/shutterstock_1211178508-e1547829423934.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid cyan; */
+    margin-top: 100px;
+}
+
+.aboutChartImg{
+     width: 800px;
+     height: 450px;
+     -webkit-box-shadow: 0px 0px 29px 2px rgba(184,253,255,0.81); 
+     box-shadow: 0px 0px 29px 2px rgba(184,253,255,0.81);
+}
+
+#aboutHeading{
+     color: white;
+     font-size: 40px;
+     margin: 0;
+}
+
+.aboutContentContainer{
+     width: 800px;
+     height: 500px;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     /* border: 1px solid red; */
+     justify-content: space-around;
+}
+
+.aboutContentContainer p{
+     font-size: 17px;
+     line-height: 26px;
+}
+
+/* 
+#aboutBanner{
+     height: 100%;
+     width: 100%;
+} */

@@ -4,7 +4,9 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = process.env.port || 3450
 const axios = require("axios");
-const newsRoute = require('./routes/news')
+const newsRoute = require('./routes/news');
+const aboutRoute = require('./routes/about');
+const { getAboutPage } = require('./controllers/about');
 require('dotenv').config()
 
 
@@ -30,8 +32,9 @@ app.use(express.urlencoded({ extended: true })) // middleware for parsing bodies
 app.use(express.json()) // It parses incoming JSON requests and puts the parsed data in req
 
 // Initialize routes
-app.use('/news', newsRoute)
 
+app.use('/news', newsRoute)
+app.use('/about', aboutRoute)
 
 
 app.get('/', async (request, response) => {
