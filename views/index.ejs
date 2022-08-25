@@ -9,6 +9,7 @@
 	<title>Clear Coin</title>
 
 	<!-- external CSS link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -32,6 +33,15 @@
 				<a href="/portfolio" class="signInBtn">Portfolio</a>
 				<a href="#" class="signInBtn">Sign In</a>
 				<a href="/about" class="signInBtn">About</a>
+			</div>
+			<div id="hamburgerContainer" class="closedHamburger">
+				<nav class="hamburgerMenuNav invisible">
+					<a href="">News</a>
+					<a href="">Portfolio</a>
+					<a href="">Sign In</a>
+					<a href="">About</a>
+				</nav>
+				<i class="fa fa-bars"></i>
 			</div>
 		</div>
 	</header>
@@ -135,11 +145,11 @@
 		</table>
 	</section>
 
-	<button class="addCoins">Add coins</button>
-	
-	<script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script>
+	<!-- <button class="addCoins">Add coins</button> -->
+	<script src="js/hamburgermenu.js"></script>
 	<script type="module" src="js/main.js"></script>
 	<script src="js/tablesort.js"></script>
+	<script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script>
 </body>
 
 </html>

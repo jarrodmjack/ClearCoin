@@ -39,6 +39,10 @@ body {
      background-attachment: fixed;
 }
 
+.visible{
+     display: block;
+}
+
 a {
      color: white;
      text-decoration: none;
@@ -250,6 +254,9 @@ th.price:hover {
 table {
      margin: 0 auto;
      width: 1200px;
+     display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 table,
@@ -298,6 +305,9 @@ tbody tr:nth-child(odd):hover {
 .tableContainer {
      padding-top: 5rem;
      /* height: 1000px; */
+     display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .tableSymbol {
@@ -352,6 +362,11 @@ header {
 
 .nav-button-container {
      display: flex;
+}
+
+.fa-bars{
+     font-size: 30px;
+     display: none;
 }
 
 
@@ -660,7 +675,7 @@ h3.listItems {
 }
 
 .visible {
-     display: none;
+     display: block;
 }
 
 
@@ -829,4 +844,96 @@ span.apexcharts-legend-text {
 #aboutBanner{
      height: 100%;
      width: 100%;
+} */
+
+
+/* Hamburger menu */
+
+/* #hamburgerContainer{
+     display: flex;
+} */
+
+.closedHamburger{
+     display: none;
+}
+
+.hamburgerMenuNav{
+     display: flex;
+     flex-direction: column;
+     height: 100px;
+     width: 400px;
+     background-color: cyan;
+}
+
+.hamburgerMenuNav a{
+     color: black;
+     font-size: 20px;
+}
+
+
+
+
+/* ************MEDIA QUERIES*********** */
+
+
+/* Home page */
+
+@media all and (max-width: 1164px){
+     section.tripleWrapper{
+          flex-wrap: wrap;
+     }
+
+     *{
+          margin: 0;
+     }
+}
+
+
+
+@media all and (max-width: 980px){
+     section.tripleWrapper{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+
+     .fa-bars{
+          display: block;
+          margin-right: 5rem;
+     }
+
+     .nav-button-container{
+          display: none;
+     }
+
+     .headerItemContainer{
+          justify-content: space-between;
+     }
+
+     table,
+     th,
+     td,
+     tr {
+     vertical-align: middle;
+     color: rgb(194, 192, 192);
+     /* width: 100%; */
+     }
+
+     .closedHamburger{
+          display: block;
+     }
+
+
+}
+
+
+/* TESTING HAM */
+
+.invisible{
+     display: none;
+}
+
+/* .hamburgerMenuNav{
+     display: none;
 } */
