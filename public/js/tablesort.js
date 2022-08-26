@@ -19,25 +19,14 @@
             // getting innertext from column 1, 2 and 4, removing the dollar sign and sorting as number
             const aColText = Number(a.querySelector(`td:nth-child(${column + 1})`).innerText.slice(1).split(',').join(''))//<--- get table cell element at the index which pass in
             const bColText = Number(b.querySelector(`td:nth-child(${column + 1})`).innerText.slice(1).split(',').join(''))
-            // console.log(aColText)
-            // console.log(bColText)
             return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier)
         }else if(column === 4){ //circulating supply
-            const aColText = Number(a.querySelector(`td:nth-child(${column + 1})`).innerText)
-            const bColText = Number(b.querySelector(`td:nth-child(${column + 1})`).innerText)
+            // console.log('sorting circ')
+            const aColText = Number(a.querySelector(`td:nth-child(${column + 1})`).innerText.split(`,`).join(''))
+            const bColText = Number(b.querySelector(`td:nth-child(${column + 1})`).innerText.split(`,`).join(''))
             return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier)
         }
-        // else if(column === 5){ // sort by percentages
-        //     if(a.querySelector(`td:nth-child(${column + 1})`).innerText.slice(0, 1) === '-' && b.querySelector(`td:nth-child(${column + 1})`).innerText.slice(0, 1)){
-        //         const aColText = Number(a.querySelector(`td:nth-child(${column + 1})`).innerText.slice(1).split('.').join(''))
-        //         const bColText = Number(b.querySelector(`td:nth-child(${column + 1})`).innerText.slice(1).split('.').join(''))
-        //         return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier)
-        //     }else { //if percentage is positive
-        //         const aColText = Number(a.querySelector(`td:nth-child(${column + 1})`).innerText.split('.').join(''))
-        //         const bColText = Number(b.querySelector(`td:nth-child(${column + 1})`).innerText.split('.').join(''))
-        //         return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier)
-        //     }
-        // }
+      
         else{ //just sort by regular string (name category, column 0)
             const aColText = a.querySelector(`td:nth-child(${column + 1})`).innerText.trim() //<--- get table cell element at the index which we pass in
             const bColText = b.querySelector(`td:nth-child(${column + 1})`).innerText.trim()

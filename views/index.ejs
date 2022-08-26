@@ -20,7 +20,10 @@
 
 <body>
 	<!-- moving carousel from coinlib -->
-	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe
+			src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
+			width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+			style="border:0;margin:0;padding:0;"></iframe></div>
 
 
 	<header>
@@ -49,76 +52,79 @@
 
 
 	<section class="tripleSectionAndGlobalCurrencyData">
-	<div class="globalCurrencyDataContainer">
-		<h2>Today's Cryptocurrency Market Cap</h2>
-		<p>The global crypto market cap is <span id="globalMarketCap"></span>, which is a <span id="globalPercChange24Hr"></span> <span id="incOrDec"></span> over the last 24 hours.</p>
-		<span id="globalDataUpdateTime">Updated at 11:07:46</span> 
-	  </div>
-
-	<!-- Triple section above price table -->
-	<section class="tripleWrapper">
-
-
-		
-		<!-- Trending -->
-		<div class="tripleContainers">
-			<h2 class="trendingTitle">Trending Currencies</h2>
-			<div class="trendingContainer trendingOneContainer">
-				<span>1</span>
-				<img id="trendingIconOne" src="" alt="">
-				<span class="trendingHeading" id="trendingNameOne"></span>
-				<span id="trendingSymbolOne"></span>
-			</div>
-			<div class="trendingContainer trendingTwoContainer">
-				<span>2</span>
-				<img id="trendingIconTwo" src="" alt="">
-				<span class="trendingHeading" id="trendingNameTwo"></span>
-				<span id="trendingSymbolTwo"></span>
-			</div>
-			<div class="trendingContainer trendingThreeContainer"><span>3</span>
-				<img id="trendingIconThree" src="" alt="">
-				<span class="trendingHeading" id="trendingNameThree"></span>
-				<span id="trendingSymbolThree"></span>
-			</div>
+		<div class="globalCurrencyDataContainer">
+			<h2>Today's Cryptocurrency Market Cap</h2>
+			<p>The global crypto market cap is <span id="globalMarketCap"></span>, which is a <span
+					id="globalPercChange24Hr"></span> <span id="incOrDec"></span> over the last 24 hours.</p>
+			<span id="globalDataUpdateTime">Updated at 11:07:46</span>
 		</div>
 
-		<!-- Top Movers -->
-		<!-- <div class="tripleContainers topMoversContainer">
+		<!-- Triple section above price table -->
+		<section class="tripleWrapper">
+
+
+
+			<!-- Trending -->
+			<div class="tripleContainers">
+				<h2 class="trendingTitle">Trending Currencies</h2>
+				<div class="trendingContainer trendingOneContainer">
+					<span>1</span>
+					<img id="trendingIconOne" src="" alt="">
+					<span class="trendingHeading" id="trendingNameOne"></span>
+					<span id="trendingSymbolOne"></span>
+				</div>
+				<div class="trendingContainer trendingTwoContainer">
+					<span>2</span>
+					<img id="trendingIconTwo" src="" alt="">
+					<span class="trendingHeading" id="trendingNameTwo"></span>
+					<span id="trendingSymbolTwo"></span>
+				</div>
+				<div class="trendingContainer trendingThreeContainer"><span>3</span>
+					<img id="trendingIconThree" src="" alt="">
+					<span class="trendingHeading" id="trendingNameThree"></span>
+					<span id="trendingSymbolThree"></span>
+				</div>
+			</div>
+
+			<!-- Top Movers -->
+			<!-- <div class="tripleContainers topMoversContainer">
 			<h2>Top Movers</h2>
 		</div> -->
 
-		<!-- Trusted Exchanges -->
-		<div class="tripleContainers">
-			<h2 class="trustedTitle">Top Exchanges by Volume</h2>
-			<div class="trustedContainer trustedOneContainer">
-				<span>1</span>
-				<img id="trustedIconOne" src="" alt="">
-				<span class="trustedHeading" id="trustedNameOne"></span>
-				<span id="trustedSymbolOne"></span>
+			<!-- Trusted Exchanges -->
+			<div class="tripleContainers">
+				<h2 class="trustedTitle">Top Exchanges by Volume</h2>
+				<div class="trustedContainer trustedOneContainer">
+					<span>1</span>
+					<img id="trustedIconOne" src="" alt="">
+					<span class="trustedHeading" id="trustedNameOne"></span>
+					<span id="trustedSymbolOne"></span>
+				</div>
+				<div class="trustedContainer trustedOneContainer">
+					<span>2</span>
+					<img id="trustedIconTwo" src="" alt="">
+					<span class="trustedHeading" id="trustedNameTwo"></span>
+					<span id="trustedSymbolTwo"></span>
+				</div>
+				<div class="trustedContainer trustedOneContainer">
+					<span>3</span>
+					<img id="trustedIconThree" src="" alt="">
+					<span class="trustedHeading" id="trustedNameThree"></span>
+					<span id="trustedSymbolThree"></span>
+				</div>
 			</div>
-			<div class="trustedContainer trustedOneContainer">
-				<span>2</span>
-				<img id="trustedIconTwo" src="" alt="">
-				<span class="trustedHeading" id="trustedNameTwo"></span>
-				<span id="trustedSymbolTwo"></span>
-			</div>
-			<div class="trustedContainer trustedOneContainer">
-				<span>3</span>
-				<img id="trustedIconThree" src="" alt="">
-				<span class="trustedHeading" id="trustedNameThree"></span>
-				<span id="trustedSymbolThree"></span>
-			</div>
-		</div>
 
-		<div class="converterContainer tripleContainers">
-			
-			<!-- Crypto Converter ⚡ Widget -->
-			<crypto-converter-widget id="cryptoConverterWidget" shadow symbol live background-color="#2A2E45" border-radius="0.27rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2"></crypto-converter-widget>
-			<!-- /Crypto Converter ⚡ Widget -->
-		</div>
+			<div class="converterContainer tripleContainers">
 
+				<!-- Crypto Converter ⚡ Widget -->
+				<crypto-converter-widget id="cryptoConverterWidget" shadow symbol live background-color="#2A2E45"
+					border-radius="0.27rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2">
+				</crypto-converter-widget>
+				<!-- /Crypto Converter ⚡ Widget -->
+			</div>
+
+		</section>
 	</section>
-</section>
 	<!-- <section class="activeCurrenciesContainer">
 		<h3 class="activeCurrencies">Current Active Currencies:</h3>
 		<span id="activeCurrencyCount" class="activeCurrencies"></span>
@@ -144,6 +150,30 @@
 			</tbody>
 		</table>
 	</section>
+
+	<footer class="footerContainer">
+		<div class="footerLogoContainer">
+			<h3>ClearCoin Logo</h3>
+			<h3 id="footerCopySymbol">&copy; 2022 ClearCoin</h3>
+		</div>
+		<div class="footerLinksContainer">
+			<nav class="footerLinks">
+				<h4>Featured</h4>
+				<a href="/">Crypto prices</a>
+				<a href="/portfolio">Portfolio</a>
+				<a href="/signup">Sign Up</a>
+				<a href="/about">About</a>
+			</nav>
+			<nav class="footerLinks">
+				<h4>Socials</h4>
+				<a href="https://www.instagram.com/jarrdojack/">Instagram</a>
+				<a href="https://twitter.com/jarrodmjack">Twitter</a>
+				<a href="https://github.com/jarrodmjack">Github</a>
+				<a href="https://www.linkedin.com/in/jarrod-jack-65472822a/">LinkedIn</a>
+				<a href="#">Facebook</a>
+			</nav>
+		</div>
+	</footer>
 
 	<!-- <button class="addCoins">Add coins</button> -->
 	<script src="js/hamburgermenu.js"></script>

@@ -148,7 +148,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
     }
 
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 75; i++) {
 
 
       // table row creation and append to table body
@@ -192,7 +192,10 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
       td3.innerText = `$${data[i].market_cap.toLocaleString()}`
       const td4 = document.createElement('td')
       tr.appendChild(td4)
-      td4.innerText = `${data[i].circulating_supply.toFixed(0)}`
+      td4.innerText = `${data[i].circulating_supply.toLocaleString("en", {   
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    })}`
       const td5 = document.createElement('td')
       tr.appendChild(td5)
       td5.innerText = `$${data[i].total_volume.toLocaleString()}`

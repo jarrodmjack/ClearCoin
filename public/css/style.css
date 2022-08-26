@@ -370,12 +370,89 @@ header {
 }
 
 
+.closedHamburger{
+     display: none;
+}
+
+.hamburgerMenuNav{
+     display: flex;
+     flex-direction: column;
+     height: 100px;
+     width: 400px;
+     background-color: cyan;
+}
+
+.hamburgerMenuNav a{
+     color: black;
+     font-size: 20px;
+}
+
+
+
+
+
+/* *** FOOTER *** */
+
+
+.footerContainer{
+     height: 250px;
+     background-color: rgba(34, 36, 48, 1);
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin-top: 100px;
+     color: rgb(194, 192, 192);
+}
+
+.footerLinksContainer{
+     display: flex;
+     gap: 20px;
+}
+
+.footerLogoContainer{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     gap: 100px;
+}
+
+.footerContainer h3{
+     font-size: 28px;
+}
+
+#footerCopySymbol{
+     font-size: 15px;
+}
+
+nav.footerLinks{
+     /* border: 1px solid red; */
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+}
+
+nav.footerLinks a{
+     display: flex;
+     color: rgb(191, 191, 191);
+     font-size: 18px;
+}
+
+nav.footerLinks a:hover{
+     color: white;
+     transition: .15s ease;
+}
+
+
+.footerLinks h4{
+     font-weight: bold;
+     font-size: 24px;
+     color: white;
+}
+
+
+
 
 /* table */
-
-
-
-
 
 /* PORTFOLIO */
 /* ************************************************* */
@@ -852,23 +929,6 @@ span.apexcharts-legend-text {
 /* #hamburgerContainer{
      display: flex;
 } */
-
-.closedHamburger{
-     display: none;
-}
-
-.hamburgerMenuNav{
-     display: flex;
-     flex-direction: column;
-     height: 100px;
-     width: 400px;
-     background-color: cyan;
-}
-
-.hamburgerMenuNav a{
-     color: black;
-     font-size: 20px;
-}
 
 
 
