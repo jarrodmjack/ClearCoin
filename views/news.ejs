@@ -36,7 +36,7 @@
         <% for(let i=0; i < news.length; i++) { %>
             <a class="newsUrl" target="_blank" href="<%= news[i].url %>">
             <div class="newsSquare">
-                    <img class="newsThumbImg" src="<%= news[i].image.thumbnail.contentUrl ? news[i].image.thumbnail.contentUrl : 'https://www.eff.org/files/images_insert/bitcoin-square-265_0.jpg' %>" alt="newsimg">
+                    <img class="newsThumbImg" src=<%= !news[i].image ? "https://www.eff.org/files/images_insert/bitcoin-square-265_0.jpg" : news[i].image.thumbnail.contentUrl %> alt="newsimg">
                     <div class="newsTextContentContainer">
                         <span id="newsProvider">
                             <%= news[i].provider[0].name %>
