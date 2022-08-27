@@ -938,6 +938,8 @@ span.apexcharts-legend-text {
 
 /* Home page */
 
+
+
 @media all and (max-width: 1164px){
      section.tripleWrapper{
           flex-wrap: wrap;
@@ -946,6 +948,12 @@ span.apexcharts-legend-text {
      *{
           margin: 0;
      }
+
+     .portfolioContentContainer{
+          display: flex;
+          flex-direction: column;
+     }
+
 }
 
 
