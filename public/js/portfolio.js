@@ -118,6 +118,8 @@ function allStorage() {
         noAssets.classList.remove('visible')
     }else{
       for (let i = 0; i < localStorage.length; i++) {
+        const noAssets = document.querySelector('.noAssetsMsg')
+        noAssets.style.display = 'none'
         array.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
     }
   }
