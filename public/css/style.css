@@ -956,7 +956,6 @@ span.apexcharts-legend-text {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          border: 1px solid red;
           width: 50%;
      }
 
@@ -965,6 +964,8 @@ span.apexcharts-legend-text {
           padding-left: 125px;
           align-items: flex-start;
      }
+
+
 
      div.converterContainer.tripleContainers{
           display: flex;
