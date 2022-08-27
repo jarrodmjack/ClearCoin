@@ -974,19 +974,19 @@ span.apexcharts-legend-text {
           padding: 0;
      }
 
-
+/* 
      .fa-bars{
           display: block;
           margin-right: 5rem;
-     }
+     } */
 
-     .nav-button-container{
+     /* .nav-button-container{
           display: none;
-     }
+     } */
 
-     .headerItemContainer{
+     /* .headerItemContainer{
           justify-content: space-between;
-     }
+     } */
 
      table,
      th,
@@ -997,9 +997,9 @@ span.apexcharts-legend-text {
      /* width: 100%; */
      }
 
-     .closedHamburger{
+     /* .closedHamburger{
           display: block;
-     }
+     } */
 
 
 }
@@ -1007,9 +1007,9 @@ span.apexcharts-legend-text {
 
 /* TESTING HAM */
 
-.invisible{
+/* .invisible{
      display: none;
-}
+} */
 
 /* .hamburgerMenuNav{
      display: none;
