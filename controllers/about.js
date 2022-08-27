@@ -1,8 +1,8 @@
-const axios = require('axios');
-const { response } = require('express');
+// const axios = require('axios');
+// const { response } = require('express');
 
 
-// news controller
+// about controller
 module.exports = {
     getAboutPage: async(req, res) => {
         // let newsArray;

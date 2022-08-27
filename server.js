@@ -2,12 +2,11 @@
 const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
-const PORT = process.env.port || 3450
 const axios = require("axios");
 const newsRoute = require('./routes/news');
 const aboutRoute = require('./routes/about');
 const { getAboutPage } = require('./controllers/about');
-require('dotenv').config()
+require('dotenv').config({path: './config/.env'})
 
 
 
@@ -94,6 +93,6 @@ app.post('/addCoinsToDb', (req, res) => {
 
 
 
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Listening on port ${process.env.PORT}`)
 })
