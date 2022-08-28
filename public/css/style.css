@@ -62,9 +62,9 @@ h1 {
     margin-left: 5rem;
 }
 
-h1:hover {
+/* h1:hover {
     color: lightgray;
-}
+} */
 
 h2 {
     color: lightgray;
@@ -962,6 +962,8 @@ div.loginContainer{
     gap: 20px;
 }
 
+
+
 #loginForm input {
     font-size: 20px;   
 }
@@ -991,15 +993,121 @@ div.loginContainer{
 }
 
 .alert{
-    color: white;
+    color: rgb(233, 27, 27);
     font-size: 20px;
 }
 
 .loginHeading{
+    margin-bottom: 15px;
     color: white;
     font-size: 30px;
     margin: 0;
 }
+
+/* Sign up */
+
+.signupContainer{
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(18, 18, 23);
+    width: 450px;
+    height: 525px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    gap: 10px;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    text-align: center;
+}
+
+
+#signupForm{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+}
+
+
+#signupForm input {
+    font-size: 20px;  
+    border: none; 
+}
+
+#signupForm .loginTextInput{
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+#signupForm .loginTextInput:focus{
+    outline: none;
+    /* border: none; */
+}
+
+
+.signupHeading{
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+
+
+#submitSignupBtn{
+    background-color: #3648d6;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 7px;
+    color: white;
+}
+
+#submitSignupBtn:hover{
+    background-color: #19246a;
+    cursor: pointer;
+}
+
+
+
+#signupForm input {
+    font-size: 20px;   
+}
+
+#signupForm .signupTextInput{
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+#signupForm .signupTextInput:focus{
+    outline: none;
+    /* border: none; */
+}
+
+.goBack{
+    /* border: 1px solid red; */
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    padding: 2px;
+}
+
+.fa-arrow-left{
+    font-size: 30px;
+}
+
+.goBackArrow:hover{
+    cursor: pointer;
+    opacity: .7;
+}
+
+
 
 
 /* ************MEDIA QUERIES*********** */
@@ -1053,8 +1161,35 @@ div.loginContainer{
          display: block;
     }
 
+}
+
+
+
+@media all and (max-width:500px){
+    .signupContainer{
+        width: 280px;
+        height: 650px;
+    }
+
+    #signupForm{
+        width: 230px;
+    }
+
+    div.loginContainer{
+        width: 280px;
+    }
+
+    #loginForm{
+        width: 230px;
+    }
+
+    .alert{
+        text-align: center;
+    }
 
 }
+
+
 
 
 /* TESTING HAM */
