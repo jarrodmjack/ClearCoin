@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="Your description goes here">
-	<meta name="keywords" content="one, two, three">
-
-	<title>Clear Coin</title>
-
-	<!-- external CSS link -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -16,178 +11,30 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/tablesort.css">
+	<title>Portfolio</title>
 </head>
-
-<body class="portfolioBody">
-
-
-
+<body>
+	
 	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe
-			src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
-			width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
-			style="border:0;margin:0;padding:0;"></iframe></div>
+		src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
+		width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+		style="border:0;margin:0;padding:0;"></iframe></div>
 
-	<header id="headerContainer">
-		<div class="headerItemContainer">
-			<a href="#">
-				<h1>ClearCoin</h1>
-			</a>
-			<div class="nav-button-container">
-				<a href="/news" class="signInBtn">News</a>
-				<a href="/" class="signInBtn">Home</a>
-				<!-- <a href="#" class="signInBtn">Sign In</a> -->
-				<a href="/about" class="signInBtn">About</a>
-			</div>
+<!-- <header id="headerContainer">
+	<div class="headerItemContainer">
+		<a href="#">
+			<h1>ClearCoin</h1>
+		</a>
+		<div class="nav-button-container">
+			<a href="/news" class="signInBtn">News</a>
+			<a href="/" class="signInBtn">Home</a>
+			<a href="/login" class="signInBtn">Log In</a>
+			<a href="/about" class="signInBtn">About</a>
 		</div>
-	</header>
+	</div>
+</header> -->
 
+<%- include("partials/header") -%>
 
-	<section class="portfolioContentContainer">
-		<!-- <div class="addableCoinsContainer">
-			<ul class="addableCoinsList">
-				<% for(let i=0; i < coins.length; i++) { %>
-					<li class="listItems">
-						<%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %>
-					</li>
-					<% } %>
-			</ul>
-		</div> -->
-
-		<div class="dropDownAndConverterContainer">
-			<h3 class="dropdownHeading">Add a currency to your portfolio</h3>
-			<div id="dropContainer" class="dropdown">
-				<button id="dropdownBtn" class="dropbtn">Currencies</button>
-				<div id="myDropdown" class="dropdown-content">
-					<input type="text" placeholder="Search.." id="myInput">
-
-					<% if (coins.length> 0){ %>
-						<% for(let i=0; i < coins.length; i++) {%>
-							<h3 class="listItems">
-								<%= `${coins[i].name} | ${coins[i].currentprice} | ${coins[i].id}` %>
-							</h3>
-							<% } %>
-								<% } else {%>
-									<a href="" class="listItem">Data Not available</a>
-									<% } %>
-				</div>
-			</div>
-
-			<!-- Crypto Converter ⚡ Widget -->
-			<!-- <crypto-converter-widget id="cryptoConverterWidget" shadow symbol live background-color="#2A2E45" border-radius="0.27rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2"></crypto-converter-widget><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script> -->
-			<!-- /Crypto Converter ⚡ Widget -->
-
-
-
-		</div>
-
-		<div class="isNotBlurred addQtyModal">
-			<div class="modalItemContainer">
-				<div class="modalCloseBtnContainer">
-					<button id="closeModalBtn">X</button>
-				</div>
-				<h2>Please enter Quantity</h2>
-				<div class="addQtyModalInputContainer">
-					<input id="numberInput" type="number" placeholder="0">
-					<button id="submitModalBtn">Add to Portfolio</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- 
-	<label for="ice-cream-choice">Currency</label>
-	<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-	<datalist id="ice-cream-flavors">
-		<% for(let i=0; i < coins.length; i++) {%>
-			<option class="listItems" value="<%= coins[i].name %>">
-		<% } %>
-	</datalist>
--->
-
-
-
-
-
-		<div id="portfolioItems" onclick="" class="personalItemsContainer">
-
-
-			<div class="portfolioCoinContainer">
-				<!-- <input id="coinSearch" type="search">
-			<input id="testBtn" type="submit"> -->
-				<!-- <div class="portfolioCoinList">
-			</div> -->
-
-
-				<div class="portfolioTableContainer">
-					<h3 class="noAssetsMsg visible">No current assets</h3>
-					<h3 class="portfolioBalance"></h3>
-					<table class="portfolioAssetsTable">
-						<thead class="portfolioAssetsHeadings">
-							<tr>
-								<th class="portfolioTh">Symb</th>
-								<th class="portfolioTh">Name</th>
-								<th class="portfolioTh">Price</th>
-								<th class="portfolioTh">QTY</th>
-								<th class="portfolioTh">Add</th>
-								<th class="portfolioTh">Delete</th>
-							</tr>
-						</thead>
-						<tbody class="portfolioAssetsTableBody">
-						</tbody>
-					</table>
-				</div>
-
-				<span id="counter_span"></span>
-			</div>
-		</div>
-
-		<div class="chartContainer">
-			<h3 id="chartHeading">Your portfolio currency weights</h3>
-			<div id="chart">
-
-			</div>
-		</div>
-
-
-
-
-	</section>
-
-
-	<footer class="footerContainer">
-		<div class="footerLogoContainer">
-			<h3>ClearCoin Logo</h3>
-			<h3 id="footerCopySymbol">&copy; 2022 ClearCoin</h3>
-		</div>
-		<div class="footerLinksContainer">
-			<nav class="footerLinks">
-				<h4>Featured</h4>
-				<a href="/">Crypto prices</a>
-				<a href="/portfolio">Portfolio</a>
-				<a href="/signup">Sign Up</a>
-				<a href="/about">About</a>
-			</nav>
-			<nav class="footerLinks">
-				<h4>Socials</h4>
-				<a href="https://www.instagram.com/jarrdojack/">Instagram</a>
-				<a href="https://twitter.com/jarrodmjack">Twitter</a>
-				<a href="https://github.com/jarrodmjack">Github</a>
-				<a href="https://www.linkedin.com/in/jarrod-jack-65472822a/">LinkedIn</a>
-				<a href="#">Facebook</a>
-			</nav>
-		</div>
-	</footer>
-
-
-
-
-
-
-
-	<!-- <script src="/js/portfolio.js"></script> -->
-	<script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
-	<script type="module" src="/js/portfolio.js"></script>
-	<script src="js/tablesort.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </body>
-
 </html>

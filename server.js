@@ -1,98 +1,53 @@
-// const { response } = require('express')
 const express = require('express')
 const app = express()
-const MongoClient = require('mongodb').MongoClient
-const axios = require("axios");
-const newsRoute = require('./routes/news');
-const aboutRoute = require('./routes/about');
-const { getAboutPage } = require('./controllers/about');
+const mongoose = require('mongoose')
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const flash = require('express-flash')
+const logger = require('morgan')
+const connectDB = require('./config/database')
+const mainRoutes = require('./routes/main')
+const todoRoutes = require('./routes/todos')
+const newsRoutes = require('./routes/news')
+const aboutRoutes = require('./routes/about')
+const portfolioRoutes = require('./routes/portfolio')
+const axios = require('axios')
+
 require('dotenv').config({path: './config/.env'})
 
+// Passport config
+require('./config/passport')(passport)
 
+connectDB()
 
-
-
-let db,
-    dbConnectionStr = process.env.DB_STRING, //database connection string from .env file
-    dbName = 'clearcoin' // declare database name
-
-
-
-    MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) //support older mongo version 
-    .then(client => {
-        console.log(`Connected to ${dbName} Database`) //show successful connection to database
-        db = client.db(dbName) // storing database information in a variable
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(logger('dev'))
+// Sessions
+app.use(
+    session({
+      secret: 'keyboard cat',
+      resave: false,
+      saveUninitialized: false,
+      store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
+  )
+  
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
-//  middleware
-app.set('view engine', 'ejs') // render ejs for the client side
-app.use(express.static('public')) // serve all files in public folder
-app.use(express.urlencoded({ extended: true })) // middleware for parsing bodies from URL
-app.use(express.json()) // It parses incoming JSON requests and puts the parsed data in req
-
-// Initialize routes
-
-app.use('/news', newsRoute)
-app.use('/about', aboutRoute)
-
-
-app.get('/', async (request, response) => {
-    response.render('index.ejs')
-})
-
-
-app.get('/portfolio', async (request, response) => { 
-
-    const coins = await db.collection('coins').find().toArray()
-    const coinArray = coins[0].coin
-    // console.log(coinArray)
-    response.render('portfolio.ejs', {coins: coinArray})
-})
-    
-
-app.get('/getCurrentCoins', async(req, res) => {
-    const coinList = await db.collection('coins').find().toArray()
-    const coins = coinList[0].coin
-    res.json(coins)
-})
-
-
-// app.get('/news', async(req, res) => {
-//     let news;
-//     const options = {
-//         method: 'GET',
-//         url: `https://bing-news-search1.p.rapidapi.com/news/search`,
-//         params: { q: `cryptocurrency`, freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off' },
-//         headers: {
-//             'X-BingApis-SDK': 'true',
-//             'X-RapidAPI-Key': 'db3e8ae18bmshd7bb610557d438fp1e9721jsneadf0cccb21c',
-//             'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
-//         }
-//     };
-      
-//       axios.request(options).then(function (response) {
-//         console.log(response.data)
-//         // console.log(news)
-//       }).catch(function (error) {
-//           console.error(error);
-//       });
-//     // res.render('news.ejs', { newsData: news })
-//     // console.log(news)
-// })
-
-
-
-app.post('/addCoinsToDb', (req, res) => {
-    db.collection('coins').insertOne({coin: req.body.coin})
-    .then(result => {
-        console.log('Coin added')
-        res.json('coin added')
-    })
-    .catch(error => console.error(error))
-})
-
-
-
-app.listen(process.env.PORT, () => {
-    console.log(`Listening on port ${process.env.PORT}`)
-})
+app.use(flash())
+  
+app.use('/', mainRoutes)
+app.use('/todos', todoRoutes)
+app.use('/news', newsRoutes)
+app.use('/about', aboutRoutes)
+app.use('/portfolio', portfolioRoutes)
+ 
+app.listen(process.env.PORT, ()=>{
+    console.log('Server is running, you better catch it!')
+})    

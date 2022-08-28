@@ -1,3 +1,18 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Your VERY OWN Todolist!</h1>
+    <a href="/login"> Login</a>
+    <a href="/signup"> Signup</a>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +40,7 @@
 			width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
 			style="border:0;margin:0;padding:0;"></iframe></div>
 
-
+<!-- 
 	<header>
 		<div class="headerItemContainer">
 			<a href="#">
@@ -34,7 +49,12 @@
 			<div class="nav-button-container">
 				<a href="/news" class="signInBtn">News</a>
 				<a href="/portfolio" class="signInBtn">Portfolio</a>
-				<!-- <a href="#" class="signInBtn">Sign In</a> -->
+				<% if(!user){ %>
+				<a href="/login" class="signInBtn">Log in</a>
+				<a href="/signup" class="signInBtn">Sign up</a>
+				<% }else { %>
+					<a href="/logout" class="signInBtn">Log out</a>
+					<% } %>
 				<a href="/about" class="signInBtn">About</a>
 			</div>
 			<div id="hamburgerContainer" class="closedHamburger">
@@ -47,16 +67,18 @@
 				<i class="fa fa-bars"></i>
 			</div>
 		</div>
-	</header>
+	</header> -->
+
+	<%- include("partials/header") -%>
 
 
 
 	<section class="tripleSectionAndGlobalCurrencyData">
 		<div class="globalCurrencyDataContainer">
-			<h2>Today's Cryptocurrency Market Cap</h2>
-			<p>The global crypto market cap is <span id="globalMarketCap"></span>, which is a <span
-					id="globalPercChange24Hr"></span> <span id="incOrDec"></span> over the last 24 hours.</p>
-			<span id="globalDataUpdateTime">Updated at 11:07:46</span>
+			<h2>Hello<%= user ? ` ${user.userName}`:''%>, here is today's Cryptocurrency market cap</h2>
+					<p>The global crypto market cap is <span id="globalMarketCap"></span>, which is a <span
+							id="globalPercChange24Hr"></span> <span id="incOrDec"></span> over the last 24 hours.</p>
+					<span id="globalDataUpdateTime">Updated at 11:07:46</span>
 		</div>
 
 		<!-- Triple section above price table -->

@@ -1,24 +1,22 @@
-<img src='https://phantom-marca.unidadeditorial.es/d6811174d250534bc39d0fd0920eec14/crop/0x0/887x499/resize/1320/f/jpg/assets/multimedia/imagenes/2022/03/10/16469298673188.png'></img>
-
-
-
 # Introduction
 
-ClearCoin is a full stack cryptocurrency price tracking application intended for users that are new to the crypto space.
+A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+
+---
+
+> Be sure to add that lovely star 😀 and fork it for your own copy
 
 ---
 
 # Objectives
 
-- Allow users to create a their own portfolio to track cryptocurrency prices
-- Supply the latest news in the crypto space
-- User login/authentication
+- It's a beginner level app created to understand how MVC concept and logins are added
 
 ---
 
 # Who is this for? 
 
-This project is intended to be used by those who are new to the cryptocurrency space and are looking for a way to track a portfolio of currencies without any commitment or obligation to buy crypto
+- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
 
 ---
 
@@ -37,7 +35,10 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 # Things to add
 
 - Create a `.env` file and add the following as `key: value` 
-  - PORT: 3450 (can be any port example: 3000) 
+  - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
  ---
  
+ Have fun testing and improving it! 😎
+
+
