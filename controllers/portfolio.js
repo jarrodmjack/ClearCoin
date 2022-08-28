@@ -12,7 +12,7 @@ module.exports = {
                 console.log('no user')
                res.redirect('/login')
             }
-          res.render('portfolio.ejs')
+        //   res.render('portfolio.ejs')
         } catch (err) {
             console.error(err)
         }
