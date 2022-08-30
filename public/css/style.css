@@ -1135,7 +1135,7 @@ div.loginContainer{
          align-items: center;
     }
 
-    .fa-bars{
+    /* .fa-bars{
          display: block;
          margin-right: 5rem;
     }
@@ -1146,7 +1146,7 @@ div.loginContainer{
 
     .headerItemContainer{
          justify-content: space-between;
-    }
+    } */
 
     table,
     th,
@@ -1157,9 +1157,13 @@ div.loginContainer{
     /* width: 100%; */
     }
 
-    .closedHamburger{
-         display: block;
+    .nav-button-container a {
+        margin-right: 10px;
     }
+
+    /* .closedHamburger{
+         display: block;
+    } */
 
 }
 
