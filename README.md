@@ -22,6 +22,17 @@ This is for the average person who may be intimidated by some of the larger-scal
 
 ---
 
+# Optimizations 
+
+  These are some of the optimizations I am in the midst of implementing into my project given the time.
+  
+- I am in the midst of converting EJS to React.
+- Fix table turning white when scrolling on mobile
+- I also have an image that is taking it's sweet time to load (about page) so I need to fix that.
+- General optimizations for progressive rendering
+
+---
+
 # Tech used 
 
 JavaScript, MongoDB, Express, Node, CSS, EJS, Passport
