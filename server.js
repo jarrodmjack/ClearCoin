@@ -42,7 +42,8 @@ app.use(passport.session())
 
 app.use(flash())
   
-app.use('/', mainRoutes)
+// if making any requests on this route, go to routers folder and find corresponding router
+app.use('/', mainRoutes) 
 app.use('/todos', todoRoutes)
 app.use('/news', newsRoutes)
 app.use('/about', aboutRoutes)

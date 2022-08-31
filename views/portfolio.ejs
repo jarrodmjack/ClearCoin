@@ -20,21 +20,138 @@
 		width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
 		style="border:0;margin:0;padding:0;"></iframe></div>
 
-<!-- <header id="headerContainer">
-	<div class="headerItemContainer">
-		<a href="#">
-			<h1>ClearCoin</h1>
-		</a>
-		<div class="nav-button-container">
-			<a href="/news" class="signInBtn">News</a>
-			<a href="/" class="signInBtn">Home</a>
-			<a href="/login" class="signInBtn">Log In</a>
-			<a href="/about" class="signInBtn">About</a>
-		</div>
-	</div>
-</header> -->
+
 
 <%- include("partials/header") -%>
+
+
+
+	
+
+<div class="dropDownAndConverterContainer">
+	<h3 class="dropdownHeading">Add a currency to your portfolio</h3>
+	<div id="dropContainer" class="dropdown">
+		<button id="dropdownBtn" class="dropbtn">Currencies</button>
+		<div id="myDropdown" class="dropdown-content">
+			<input type="text" placeholder="Search.." id="myInput">
+				<% for(let i = 0; i < currencies.length; i++) { %>
+					<h3 id="<%= currencies[i].symbol %>" class="listItems"><%= currencies[i].name %></h3>
+					<% } %>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- 
+
+	<div class="isNotBlurred addQtyModal">
+		<div class="modalItemContainer">
+			<div class="modalCloseBtnContainer">
+				<button id="closeModalBtn">X</button>
+			</div>
+			<h2>Please enter Quantity</h2>
+			<div class="addQtyModalInputContainer">
+				<input id="numberInput" type="number" placeholder="0">
+				<button id="submitModalBtn">Add to Portfolio</button>
+			</div>
+		</div>
+	</div> -->
+
+
+
+
+
+
+	<div id="portfolioItems" onclick="" class="personalItemsContainer">
+
+
+		<div class="portfolioCoinContainer">
+			<!-- <input id="coinSearch" type="search">
+		<input id="testBtn" type="submit"> -->
+			<!-- <div class="portfolioCoinList">
+		</div> -->
+
+
+			<!-- <div class="portfolioTableContainer">
+				<h3 class="noAssetsMsg visible">No current assets</h3>
+				<h3 class="portfolioBalance"></h3>
+				<table class="portfolioAssetsTable">
+					<thead class="portfolioAssetsHeadings">
+						<tr>
+							<th class="portfolioTh">Symb</th>
+							<th class="portfolioTh">Name</th>
+							<th class="portfolioTh">Price</th>
+							<th class="portfolioTh">QTY</th>
+							<th class="portfolioTh">Add</th>
+							<th class="portfolioTh">Delete</th>
+						</tr>
+					</thead>
+					<tbody class="portfolioAssetsTableBody">
+					</tbody>
+				</table>
+			</div> -->
+
+			<span id="counter_span"></span>
+		</div>
+	</div>
+
+	<div class="chartContainer">
+		<h3 id="chartHeading">Your portfolio currency weights</h3>
+		<div id="chart">
+
+		</div>
+	</div>
+
+
+
+
+</section>
+
+
+<footer class="footerContainer">
+	<div class="footerLogoContainer">
+		<h3>ClearCoin Logo</h3>
+		<h3 id="footerCopySymbol">&copy; 2022 ClearCoin</h3>
+	</div>
+	<div class="footerLinksContainer">
+		<nav class="footerLinks">
+			<h4>Featured</h4>
+			<a href="/">Crypto prices</a>
+			<a href="/portfolio">Portfolio</a>
+			<a href="/signup">Sign Up</a>
+			<a href="/about">About</a>
+		</nav>
+		<nav class="footerLinks">
+			<h4>Socials</h4>
+			<a href="https://www.instagram.com/jarrdojack/">Instagram</a>
+			<a href="https://twitter.com/jarrodmjack">Twitter</a>
+			<a href="https://github.com/jarrodmjack">Github</a>
+			<a href="https://www.linkedin.com/in/jarrod-jack-65472822a/">LinkedIn</a>
+			<a href="#">Facebook</a>
+		</nav>
+	</div>
+</footer>
+
+
+
+
+
+
+
+<!-- <script src="/js/portfolio.js"></script> -->
+<script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
+<script type="module" src="js/portfolio.js"></script>
+<script src="js/tablesort.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+
+
+
+
+
 
 </body>
 </html>
