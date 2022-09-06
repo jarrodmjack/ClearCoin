@@ -25,21 +25,15 @@
 <%- include("partials/header") -%>
 
 
-
-	
-
-<div class="dropDownAndConverterContainer">
-	<h3 class="dropdownHeading">Add a currency to your portfolio</h3>
-	<div id="dropContainer" class="dropdown">
-		<button id="dropdownBtn" class="dropbtn">Currencies</button>
-		<div id="myDropdown" class="dropdown-content">
-			<input type="text" placeholder="Search.." id="myInput">
-				<% for(let i = 0; i < currencies.length; i++) { %>
-					<h3 id="<%= currencies[i].symbol %>" class="listItems"><%= currencies[i].name %></h3>
-					<% } %>
-		</div>
+<div class="dropdown">
+	<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+	<div id="myDropdown" class="dropdown-content">
+	  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+	  <% for(let i = 0; i < currencies.length; i++) { %>
+		<a id="<%= currencies[i].symbol %>" class="listItems"><%= currencies[i].name %></a>
+		<% } %>
 	</div>
-</div>
+  </div>
 
 
 
@@ -142,7 +136,7 @@
 
 <!-- <script src="/js/portfolio.js"></script> -->
 <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
-<script type="module" src="js/portfolio.js"></script>
+<script src="js/portfolio.js"></script>
 <script src="js/tablesort.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 

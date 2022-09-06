@@ -616,93 +616,73 @@ nav.footerLinks a:hover{
 
 /* dropdown search menu */
 
-.dropdownHeading {
-    color: white;
-    font-size: 20px;
-}
-
-.dropDownAndConverterContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
 .dropbtn {
     background-color: #3648d6;
+    width: 210px;
     color: white;
     padding: 16px;
     font-size: 16px;
-    width: 100%;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: ease .3s;
-}
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3648d6;
+  }
+  
+  #myDropdown{
+    width: 210px;
+  }
 
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: #2868a0;
-}
-
-#myInput {
+  #myInput {
     box-sizing: border-box;
-    /* background-image: url('searchicon.png'); */
+    background-color: black;
+    background-image: url('searchicon.png');
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
     padding: 14px 20px 12px 45px;
     border: none;
-    /* border-bottom: 1px solid #ddd; */
-    outline: none;
-    width: 100%;
-    background-color: rgb(48, 58, 70);
     color: white;
-}
+    width: 100%;
+    border-bottom: 1px solid rgb(59, 59, 63);
+  }
 
-#myInput:focus {
-    /* outline: 3px solid #ddd; */
-}
-
-.dropdown {
+  #myInput::placeholder {
+    color: rgb(252, 252, 252);
+  }
+  
+  #myInput:focus {outline: 3px solid rgb(59, 59, 66);}
+  
+  .dropdown {
     position: relative;
     display: inline-block;
-    height: 400px;
-    width: 300px;
-    overflow: auto;
-}
-
-.dropdown-content {
+  }
+  
+  .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #26303b;
-    color: white;
-    min-width: 230px;
-    overflow: auto;
-    /* border: 1px solid #ddd; */
+    background-color: #322f41;
+    width: 250px;
+    border: 1px solid rgb(39, 42, 70);
     z-index: 1;
-}
-
-.dropdown-content h3 {
-    color: black;
+  }
+  
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-size: 16px;
-}
+  }
 
-.dropdown h3:hover {
+
+  
+  .dropdown a:hover {
     background-color: #ddd;
+    cursor: pointer;
 }
-
-h3.listItems {
-    color: white;
-}
-
-.show {
-    display: block;
-}
-
+  
+  .show {display: block;}
 
 
 /* portfolio general styles */
@@ -815,16 +795,20 @@ span.apexcharts-legend-text {
     display: flex;
     flex-direction: column;
     gap: 50px;
+
 }
 
 .newsSquare {
-    /* border: 1px solid red; */
+    background-color: #17161b;
     display: flex;
     gap: 25px;
     /* width: 800px; */
     align-items: center;
     width: 900px;
     margin: 0 auto;
+    padding: 2rem;
+    -webkit-box-shadow: 0px 0px 11px 4px rgba(204, 252, 255, 0.295); 
+box-shadow: 0px 0px 11px 4px rgba(204, 252, 255, 0.37);
 }
 
 .newsSquare:hover {
