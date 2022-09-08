@@ -521,6 +521,7 @@ nav.footerLinks a:hover{
     right: 0;
     text-align: center;
     top: 200px;
+    display: none;
 }
 
 .modalCloseBtnContainer {
@@ -632,6 +633,8 @@ nav.footerLinks a:hover{
   
   #myDropdown{
     width: 210px;
+    height: 300px;
+    overflow: auto;
   }
 
   #myInput {
