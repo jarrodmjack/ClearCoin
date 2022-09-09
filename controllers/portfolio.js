@@ -30,7 +30,7 @@ module.exports = {
             const portfolioArray = user[0].portfolio
             const portfolioCurrencySearch = portfolioArray.find(item => item.name === incomingCurrency.name)
             // console.log()
-            if (portfolioCurrencySearch === undefined || !portfolioCurrencySearch) { //if no match is found in database
+            if (!portfolioCurrencySearch) { //if no match is found in database
                 console.log('item does not exist')
                 await User.findOneAndUpdate(
                     { _id: req.user.id },
