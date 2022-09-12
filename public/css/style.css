@@ -224,19 +224,6 @@ span.activeCurrencies {
     color: white;
 }
 
-/* 
-h3.activeCurrencies {
-    font-size: 3rem;
-    color: white;
-    text-align: center;
-} */
-
-/* span.activeCurrencies{
-    font-size: 3rem;
-    color: white;
-    text-align: center;
-} */
-
 
 
 
@@ -461,6 +448,7 @@ nav.footerLinks a:hover{
 /* PORTFOLIO */
 /* ************************************************* */
 
+
 .portfolioContentContainer{
     /* border: 1px solid lime; */
     width: 1400px;
@@ -538,6 +526,15 @@ nav.footerLinks a:hover{
     display: flex;
     flex-direction: column;
 }
+
+.tableAndChartContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 
 
 
@@ -754,8 +751,10 @@ nav.footerLinks a:hover{
     align-items: center;
 }
 
+
 .portfolioAssetsTable {
-    width: 100%;
+    width: 60%;
+    margin: 0;
 }
 
 .portfolioCurrencyPercChange{
@@ -805,7 +804,17 @@ nav.footerLinks a:hover{
     padding: 0;
 }
 
+.apexChartContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
+.apexChartHeading{
+    color: white;
+    font-size: 23px;
+    margin-left: 40px;
+}
 
 span.apexcharts-legend-text {
     color: white !important;

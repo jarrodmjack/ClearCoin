@@ -1,4 +1,6 @@
 
+
+
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -110,6 +112,51 @@ function filterFunction() {
     }
   }
 }
+
+// Get portfolio Balance
+
+async function getPortfolioBalance(){
+  
+  
+}
+
+
+
+// PORTFOLIO CHART
+
+function generatePortfolioPieChart(){
+
+let options = {
+  series: [15,25,32,17,11],
+  chart: {
+  width: 400,
+  type: 'pie',
+},
+labels: ['btc', 'usdt', 'eth', 'doge', 'algo'],
+responsive: [{
+  breakpoint: 480,
+  options: {
+    chart: {
+      width: 200
+    },
+  }
+}]
+};
+
+let chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
+
+}
+
+generatePortfolioPieChart()
+
+
+
+
+
+
+
+
 
 
 

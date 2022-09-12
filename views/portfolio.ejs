@@ -47,10 +47,20 @@
 
 
 			<section class="currentBalanceContainer">
+				<% let sum = 0 %>
+				<% for(let i = 0; i < portfolioItems.length; i++) { %>
+					<% sum += portfolioItems[i].price * portfolioItems[i].qty %>
+					<% console.log(sum) %>
+				<% } %>
+				
 				<div class="currentBalanceSquare">
-					<span id="totalPortfolioBalance">$3,214,122 CAD</span>
+					<span id="totalPortfolioBalance">$<%= sum %> CAD</span>
 					<h3>Total Balance</h3>
 				</div>
+				<!-- <div class="currentBalanceSquare">
+					<span id="totalPortfolioBalance"> CAD</span>
+					<h3>Total Profits</h3>
+				</div> -->
 			</section>
 
 
@@ -87,89 +97,98 @@
 					<div class="portfolioTableContainer"> -->
 			<!-- <h3 class="noAssetsMsg visible">No current assets</h3> -->
 			<!-- <h3 class="portfolioBalance"></h3> -->
-			<table class="portfolioAssetsTable">
-				<thead class="portfolioAssetsHeadings">
-					<tr>
-						<th class="portfolioTh">Name</th>
-						<th class="portfolioTh">Price</th>
-						<th class="portfolioTh">Perc Change</th>
-						<th class="portfolioTh">QTY</th>
-						<th class="portfolioTh">Add</th>
-						<th class="portfolioTh">Delete</th>
-					</tr>
-				</thead>
-				<tbody class="portfolioAssetsTableBody">
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-					<tr>
-						<td>Bitcoin</td>
-						<td>$21,321</td>
-						<td class="portfolioCurrencyPercChange">+ 2.3%</td>
-						<td>2</td>
-						<td>+</td>
-						<td>TRASH</td>
-					</tr>
-				</tbody>
-			</table>
-			<!-- </div>
 
-					<span id="counter_span"></span>
-				</div> -->
-			<!-- </div> -->
+			<section class="tableAndChartContainer">
+				<table class="portfolioAssetsTable">
+					<thead class="portfolioAssetsHeadings">
+						<tr>
+							<th class="portfolioTh">Name</th>
+							<th class="portfolioTh">Price</th>
+							<!-- <th class="portfolioTh">Perc Change</th> -->
+							<th class="portfolioTh">QTY</th>
+							<th class="portfolioTh">Add</th>
+							<th class="portfolioTh">Delete</th>
+						</tr>
+					</thead>
+					<tbody class="portfolioAssetsTableBody">
+						<% for(let i = 0; i < portfolioItems.length; i++) { %>
+						<tr>
+							<td><%= portfolioItems[i].name %></td>
+							<td><%= portfolioItems[i].price %></td>
+							<td><%= portfolioItems[i].qty %></td>
+							<td>+</td>
+							<td>del</td>
+						</tr>
+						<% } %>
+						<!-- <tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr>
+						<tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr>
+						<tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr>
+						<tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr>
+						<tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr>
+						<tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr>
+						<tr>
+							<td>Bitcoin</td>
+							<td>$21,321</td>
+							<td class="portfolioCurrencyPercChange">+ 2.3%</td>
+							<td>2</td>
+							<td>+</td>
+							<td>TRASH</td>
+						</tr> -->
+					</tbody>
+				</table>
+				<div class="apexChartContainer">
+					<h3 class="apexChartHeading">Your portfolio weights</h3>
+					<div id="chart">
 
-			<!-- <div class="chartContainer"> -->
-			<!-- <h3 id="chartHeading">Your portfolio currency weights</h3> -->
-			<!-- <div id="chart">
-
+					</div>
 				</div>
-			</div>
- -->
+				</div>
+
+
+			</section>
+
 
 
 
@@ -211,6 +230,7 @@
 		<script src="js/portfolio.js"></script>
 		<script src="js/tablesort.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 
 
 
