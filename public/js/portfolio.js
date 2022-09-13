@@ -79,8 +79,6 @@ async function addCurrencyToPortfolio(e) {
         'currency': currencyToAdd
       })
     })
-    // const data = await response.json()
-    // console.log(data)
     location.reload()
 
   } catch (err) {
@@ -89,10 +87,58 @@ async function addCurrencyToPortfolio(e) {
 }
 
 
-// getting current prices when adding to portfolio
-// async function getCurrentPriceOfCurrency(currency) {
-//   const response = await fetch('');
+let qtyAddButtons = document.querySelectorAll('.addPortfolioQty')
+
+Array.from(qtyAddButtons).forEach(button => {
+  button.addEventListener('click', addQtyToCurrencyFromTable)
+})
+
+async function addQtyToCurrencyFromTable(){
+
+
+  try {
+    const id = this.parentNode.childNodes[3].getAttribute('id')
+    let qty = await my_prompt();
+    const response = await fetch('portfolio/addQtyToCurrency', {
+      method: 'put',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        'currencyId': id,
+        'qtyToAdd': qty
+      })
+    })
+    location.reload()
+
+  } catch (err) {
+    console.log(err)
+  }
+
+
+}
+
+
+
+
+
+// let deleteButtons = document.querySelectorAll('.deleteCurrency')
+
+// Array.from(deleteButtons).forEach(button => {
+//   button.addEventListener('click', deleteCurrencyFromTable)
+// })
+
+// async function deleteCurrencyFromTable(){
+//   // console.log('delete item')
+//   const id = this.parentNode.childNodes[3].getAttribute('id')
+//   const response = await fetch('portfolio/deleteCurrency', {
+//       method: 'delete',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({
+//         'currencyId': id,
+//       })
+//     })
+
 // }
+
 
 
 
@@ -115,40 +161,44 @@ function filterFunction() {
 
 // Get portfolio Balance
 
-async function getPortfolioBalance(){
+// async function getPortfolioBalance(){
   
   
-}
-
+// }
 
 
 // PORTFOLIO CHART
 
-function generatePortfolioPieChart(){
 
-let options = {
-  series: [15,25,32,17,11],
-  chart: {
-  width: 400,
-  type: 'pie',
-},
-labels: ['btc', 'usdt', 'eth', 'doge', 'algo'],
-responsive: [{
-  breakpoint: 480,
-  options: {
-    chart: {
-      width: 200
-    },
-  }
-}]
-};
 
-let chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
 
-}
 
-generatePortfolioPieChart()
+
+// function generatePortfolioPieChart(){
+
+// let options = {
+//   series: [15,25,32,17,11],
+//   chart: {
+//   width: 400,
+//   type: 'pie',
+// },
+// labels: ['btc', 'usdt', 'eth', 'doge', 'algo'],
+// responsive: [{
+//   breakpoint: 480,
+//   options: {
+//     chart: {
+//       width: 200
+//     },
+//   }
+// }]
+// };
+
+// let chart = new ApexCharts(document.querySelector("#chart"), options);
+// chart.render();
+
+// }
+
+// generatePortfolioPieChart()
 
 
 

@@ -74,6 +74,15 @@ span {
     color: white;
 }
 
+.green{
+    color: rgb(34, 216, 34);
+}
+
+.red{
+    color: rgb(243, 44, 44);
+}
+
+
 /* SCROLLBAR */
 
 /* ===== Scrollbar CSS ===== */
@@ -117,9 +126,6 @@ span {
     color: #767474;
 }
 
-.tripleWrapper {
-    /* border: 2px solid rgb(45, 193, 45); */
-}
 
 .globalCurrencyDataContainer {
     /* border: 1px solid cyan; */
@@ -1037,9 +1043,22 @@ div.loginContainer{
     cursor: pointer;
 }
 
+.loginFormSignUpRedirect{
+    color: white;
+    font-size: 21px;
+}
+
 .alert{
     color: rgb(233, 27, 27);
     font-size: 20px;
+}
+
+.signupLink{
+    color: #3648d6;
+}
+
+.signupLink:hover{
+    color: #19246a;
 }
 
 .loginHeading{
