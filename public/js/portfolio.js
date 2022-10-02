@@ -72,7 +72,7 @@ async function addCurrencyToPortfolio(e) {
   }
 
   try {
-    const response = await fetch('portfolio/addCurrencyToPortfolio', {
+      await fetch('portfolio/addCurrencyToPortfolio', {
       method: 'put',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -93,9 +93,8 @@ Array.from(qtyAddButtons).forEach(button => {
   button.addEventListener('click', addQtyToCurrencyFromTable)
 })
 
+
 async function addQtyToCurrencyFromTable(){
-
-
   try {
     const id = this.parentNode.childNodes[3].getAttribute('id')
     let qty = await my_prompt();

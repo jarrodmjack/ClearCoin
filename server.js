@@ -13,6 +13,7 @@ const newsRoutes = require('./routes/news')
 const aboutRoutes = require('./routes/about')
 const portfolioRoutes = require('./routes/portfolio')
 const axios = require('axios')
+const methodOverride = require("method-override");
 
 require('dotenv').config({path: './config/.env'})
 
@@ -35,6 +36,10 @@ app.use(
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
   )
+
+//Use forms for put / delete
+app.use(methodOverride("_method"));
+
   
 // Passport middleware
 app.use(passport.initialize())
@@ -43,11 +48,11 @@ app.use(passport.session())
 app.use(flash())
   
 // if making any requests on this route, go to routers folder and find corresponding router
-app.use('/', mainRoutes) 
-app.use('/todos', todoRoutes)
-app.use('/news', newsRoutes)
-app.use('/about', aboutRoutes)
-app.use('/portfolio', portfolioRoutes)
+app.use('/api/', mainRoutes) 
+app.use('/api/todos', todoRoutes)
+app.use('/api/news', newsRoutes)
+app.use('/api/about', aboutRoutes)
+app.use('/api/portfolio', portfolioRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')

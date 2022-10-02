@@ -1,16 +1,18 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
+const Transaction = require('./Transaction')
 
 const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String,
-  portfolio: [],
-  // date: {
-  //   type: String,
-  //   created: new Date().toISOString(),
+  portfolio: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'Transaction',
+    required: true,
+    default: []
+  },
     
-  // },
 })
 
 

@@ -32,41 +32,6 @@ async function deleteTodo(){
     }
 }
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markComplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
-
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markIncomplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
 
 
 
@@ -176,15 +141,7 @@ class Currency {
 fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=100&page=1&sparkline=false")
   .then(res => res.json())
   .then(data => {
-    // logging to test which data I am receiving
-    // console.log(data)
-    // console.log(data[0].image)
-    // console.log(data[0].name)
-    // console.log(data[0].current_price)
-    // console.log(data[0].market_cap)
-    // console.log(data[0].circulating_supply)
-    // console.log(data[0].total_volume)
-    // console.log(data[0].price_change_percentage_24h)
+
 
     for(let i = 0; i < data.length; i++){
       dbCoinsArray.push({
@@ -215,10 +172,6 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=mark
 
     // console.log(priceArray)
 
-
-    for (const e of coinArray) {
-      // console.log(e.name)
-    }
 
 
     for (let i = 0; i < 75; i++) {

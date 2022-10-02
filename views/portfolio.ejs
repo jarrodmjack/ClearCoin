@@ -47,43 +47,11 @@
 
 
 			<section class="currentBalanceContainer">
-				<!-- sum coming in from Database portfolio items  -->
-				<% let sum = 0 %>
-				<% for(let i = 0; i < portfolioItems.length; i++) { %>
-					<% sum += portfolioItems[i].price * portfolioItems[i].qty %>
-				<% } %>
-				<% console.log(sum) %>
+			
 				<div class="currentBalanceSquare">
-					<span id="totalPortfolioBalance">$<%= sum.toFixed(2) %> CAD</span>
-					<h3>Total Balance</h3>
+					<span id="totalPortfolioBalance">$ <%= totalProfitGainLoss %> CAD</span>
+					<h3>Total Change</h3>
 				</div>
-				<!-- <div class="currentBalanceSquare"> -->
-					<% let myPortfolioBalance = 0 %> 
-				<% let actualPortfolioBalance = 0; %>
-				<% let myCurrenciesAndQtys = {} %>
-				<% for(let i = 0; i < portfolioItems.length; i++) { %>
-					<% myPortfolioBalance += portfolioItems[i].price * portfolioItems[i].qty %>
-					<% let qty = portfolioItems[i].qty %>
-					<% myCurrenciesAndQtys[portfolioItems[i].id] = qty %>
-				<% } %>
-
-				<% for(const id in myCurrenciesAndQtys) { %>
-					<% let currency = currencies.filter(item => item.symbol === id)  %>
-					<% actualPortfolioBalance += currency[0].current_price * myCurrenciesAndQtys[id] %>
-				<% } %>
-				
-				<% let totalProfitOrLoss = 0 %>
-				<% if(myPortfolioBalance < actualPortfolioBalance) { %> 
-					<%  totalProfitOrLoss = actualPortfolioBalance - myPortfolioBalance  %>
-					<!-- <span class="red" id="totalPortfolioProfits"><%= totalProfitOrLoss.toFixed(2) %> CAD</span>
-					<h3>Total Losses</h3> -->
-				<% } else { %>
-					<% totalProfitOrLoss = myPortfolioBalance - actualPortfolioBalance %>
-					<!-- <span class="green" id="totalPortfolioProfits"><%= totalProfitOrLoss.toFixed(2) %> CAD</span>
-					<h3>Total Profits</h3> -->
-				<% } %>
-					
-				<!-- </div> -->
 			</section>
 
 
@@ -129,18 +97,20 @@
 							<th class="portfolioTh">Price</th>
 							<!-- <th class="portfolioTh">Perc Change</th> -->
 							<th class="portfolioTh">QTY</th>
-							<th class="portfolioTh">Add</th>
 							<th class="portfolioTh">Delete</th>
 						</tr>
 					</thead>
 					<tbody class="portfolioAssetsTableBody">
 						<% for(let i = 0; i < portfolioItems.length; i++) { %>
 						<tr>
-							<td id="<%= portfolioItems[i].name %>"><%= portfolioItems[i].name %></td>
+							<td id="<%= portfolioItems[i]._id %>"><%= portfolioItems[i].name %></td>
 							<td id="<%= portfolioItems[i].id %>"><%= portfolioItems[i].price %></td>
 							<td><%= portfolioItems[i].qty %></td>
-							<td class="addPortfolioQty">+</td>
-							<td class="deleteCurrency">del</td>
+							<td class="deleteCurrency">
+								<form action="/portfolio/deleteTransaction/<%= portfolioItems[i]._id%>?_method=DELETE" method="POST">
+									<button type="submit">Delete</button>
+								</form>
+							</td>
 						</tr>
 						<% } %>
 					</tbody>
