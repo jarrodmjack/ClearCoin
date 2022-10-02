@@ -1,19 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Table from "./components/Table"
-import TripleSectionContent from "./components/TripleSectionContent"
+import Landing from './pages/Landing';
+import Portfolio from './pages/Portfolio';
+
+
+
 
 function App() {
 
 
   return (
     <div>
+      <Router>
       <Header />
-      <div className="container mx-auto">
-        <TripleSectionContent />
-        <Table />
-      </div>
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+      </Routes>
       <Footer />
+      </Router>
     </div>
   )
 }

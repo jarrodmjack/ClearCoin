@@ -11,7 +11,7 @@ const TableRow = ({ currency }) => {
         <td>${currency.total_volume.toLocaleString()}</td>
         {/* <td className="" style={{color: currency['price_change_percentage_24h'] > 0 ? 'lime' : 'red'}}>{currency.price_change_percentage_24h > 0 ? `${currency.price_change_percentage_24h}` : currency.price_change_percentage_24h}</td>
          */}
-         <td className="whitespace-pre-wrap" style={{color: currency['price_change_percentage_24h'] > 0 ? 'lime' : 'red'}}>{currency.price_change_percentage_24h >= 0 && " "} {currency.price_change_percentage_24h.toFixed(2)}%</td>
+         <td className="whitespace-pre-wrap" style={{color: currency['price_change_percentage_24h'] > 0 ? 'lime' : 'red'}}>{currency.price_change_percentage_24h >= 0 ? '🚀' : '😭'} {Math.abs(currency.price_change_percentage_24h.toFixed(2))}%</td>
     </tr>
   )
 }
