@@ -10,7 +10,7 @@ const Header = () => {
         <header className="navbar bg-base-300 h-32">
             <div className="container mx-auto">
                 <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-xl">Clearcoin</a>
+                    <a className="btn btn-ghost normal-case text-3xl">Clearcoin</a>
                 </div>
                 <div className="flex-none gap-2">
                     <div className="dropdown dropdown-end">

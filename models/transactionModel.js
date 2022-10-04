@@ -21,10 +21,11 @@ const TransactionSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    userId: {
-        type: String,
-        required: true
-    }
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User',
+    },
 })
 
 module.exports = mongoose.model('Transaction', TransactionSchema)
