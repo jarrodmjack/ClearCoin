@@ -280,7 +280,7 @@ fetch("https://api.coingecko.com/api/v3/search/trending")
 
 
 // TRUSTED EXCHANGES***********
-fetch("https://api.coingecko.com/api/v3/exchanges?per_page=5")
+fetch("https://api.coingecko.com/api/v3/exchanges?per_page=3")
   .then(res => res.json())
   .then(data => {
     console.log(data)
